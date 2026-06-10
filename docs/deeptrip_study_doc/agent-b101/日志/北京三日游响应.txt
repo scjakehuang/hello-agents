@@ -1,0 +1,1483 @@
+ curl -X POST http://127.0.0.1:8008/chat \
+    -H "Content-Type: application/json" \
+    -H "memberId: test_user" \
+    -H "platId: 0" \
+    -d '{"sid":"test123","q":"北京三日游"}'
+data: {"type": "thinking", "text": "### 分析用户需求\n#### 旅行规划路线不明确，语言简体中文\n"}
+
+data: {"type": "thinking", "text": "🔍 正在搜索相关信息...\n"}
+
+data: {"type": "thinking", "text": "### 设计旅行路线\n#### 设计三日游行程，包含景点和交通安排\n"}
+
+data: {"type": "thinking", "text": "### 分析用户需求\n#### 规划北京三日游行程，包括景点住宿交通餐饮天气\n"}
+
+data: {"type": "thinking", "text": "### 制定行程方案\n#### 规划北京三日游，涵盖景点住宿交通，确保节奏适中\n"}
+
+data: {"type": "thinking", "text": "### 搜索景点\n#### 搜索北京市经典文化与地标相关景点\n"}
+
+data: {"type": "thinking", "text": "### 查询酒店\n#### 北京市市中心，入住日期为2026-05-12，离店日期为2026-05-14\n"}
+
+data: {"type": "thinking", "text": "### 查询交通方式\n#### 查询北京市天安门广场的地铁公交打车信息\n"}
+
+data: {"type": "thinking", "text": "### 分析现有情况\n#### 住宿交通信息完备，景点行程缺失，需补充整合\n"}
+
+data: {"type": "thinking", "text": "### 分析现有情况\n#### 获取北京三日游经典行程安排，包含景点、交通、餐饮等信息\n"}
+
+data: {"type": "thinking", "text": "### 规划旅行线路\n#### 基于实时数据与用户线路进行深入分析和规划\n"}
+
+data: {"type": "thinking", "text": "### 规划行程\n#### 游览天安门广场、故宫、天坛、雍和宫、颐和园、圆明园、奥林匹克公园\n"}
+
+data: {"type": "thinking", "text": "### 规划旅行线路\n#### 基于实时数据与用户线路进行深入分析和规划\n"}
+
+data: {"type": "thinking", "text": "### 检查结果\n#### 行程安排不合理，时间风险高，景点交通时间紧张，午餐安排冲突\n"}
+
+data: {"type": "thinking", "text": "### 调整行程安排\n#### 优化返程时间、交通衔接及午餐时间，取消部分景点以确保安全\n"}
+
+data: {"type": "thinking", "text": "### 规划旅行线路\n#### 基于实时数据与用户线路进行深度分析和规划\n"}
+
+data: {"type": "thinking", "text": "### 优化行程安排\n#### 取消奥林匹克公园行程，调整颐和园午餐时间，延长圆明园游览时间，优化交通与安检安排\n"}
+
+data: {"type": "thinking", "text": "### 规划行程\n#### 游览天安门广场、故宫、天坛、雍和宫、颐和园等景点，品尝北京小吃\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "# 🏯 古都京韵"}
+
+data: {"type": "answer", "text": "·北京皇城文化深度"}
+
+data: {"type": "answer", "text": "三日游"}
+
+data: {"type": "answer", "text": " 🏮"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "\n📅 行程总"}
+
+data: {"type": "answer", "text": "览  \n- "}
+
+data: {"type": "answer", "text": "日期：20"}
+
+data: {"type": "answer", "text": "26年5月12"}
+
+data: {"type": "answer", "text": "日 – 2"}
+
+data: {"type": "answer", "text": "026年"}
+
+data: {"type": "answer", "text": "5月14"}
+
+data: {"type": "answer", "text": "日  \n-"}
+
+data: {"type": "answer", "text": " 路线：天"}
+
+data: {"type": "answer", "text": "安门广场 →"}
+
+data: {"type": "answer", "text": " 故宫 →"}
+
+data: {"type": "answer", "text": " 景山"}
+
+data: {"type": "answer", "text": " → 前门"}
+
+data: {"type": "answer", "text": "大街 → 天坛 →"}
+
+data: {"type": "answer", "text": " 雍和"}
+
+data: {"type": "answer", "text": "宫 → 颐和"}
+
+data: {"type": "answer", "text": "园 → 圆明园  \n"}
+
+data: {"type": "answer", "text": "- 主题："}
+
+data: {"type": "answer", "text": "皇家气韵 ×"}
+
+data: {"type": "answer", "text": " 胡同"}
+
+data: {"type": "answer", "text": "烟火 × 皇家园林  \n"}
+
+data: {"type": "answer", "text": "- 住宿："}
+
+data: {"type": "answer", "text": "<a class=\"hotel-link-name\" data-pc=\"https://www.ly.com/hotel/hoteldetail?a=b&hotelId=27776987&inDate=2026-05-12&outDate=2026-05-14&refId=2000305426&refid=2000305426\" data-mainMiniApp=\"/page/hotel/pages/sky/detail/index?a=b&hotelid=27776987&isOutLand=0&indate=2026-05-12&outdate=2026-05-14&timeZone=8&refId=2000305426&refid=2000305426\" data-tcapp=\"tctclient://hotel/details?a=b&hotelId=27776987&checkIn=2026-05-12&checkOut=2026-05-14&isGAT=0&isGlobal=0&refId=2000305426&refid=2000305426\" data-elapp=\"eltclient://hotel/details?a=b&hotelId=27776987&checkIn=2026-05-12&checkOut=2026-05-14&isGAT=0&isGlobal=0&refId=2000305426&refid=2000305426\" data-hopegooapp=\"\" data-cstMiniApp=\"/pages/subHotel/pages/detail/detail?refid=&hotelid=27776987&indate=2026-05-12&outdate=2026-05-14&refId=2000305426&refid=2000305426\" href=\"https://m.ly.com/hotel/hoteldetail?a=b&hotelId=27776987&inDate=2026-05-12&outDate=2026-05-14&refId=2000305426&refid=2000305426\" target=\"_blank\">北京华旅宾馆</a>"}
+
+data: {"type": "answer", "text": "（二"}
+
+data: {"type": "answer", "text": "环核心，步行"}
+
+data: {"type": "answer", "text": "可达前门、"}
+
+data: {"type": "answer", "text": "王府井）  \n"}
+
+data: {"type": "answer", "text": "- 天气：5"}
+
+data: {"type": "answer", "text": "月12日"}
+
+data: {"type": "answer", "text": "–14日晴，"}
+
+data: {"type": "answer", "text": "白天气温3"}
+
+data: {"type": "answer", "text": "0℃，夜间17"}
+
+data: {"type": "answer", "text": "℃，干燥少"}
+
+data: {"type": "answer", "text": "雨，建议防晒"}
+
+data: {"type": "answer", "text": "防暑  \n- "}
+
+data: {"type": "answer", "text": "交通：市内以"}
+
+data: {"type": "answer", "text": "地铁+步行为主，部分"}
+
+data: {"type": "answer", "text": "路段建议使用"}
+
+data: {"type": "answer", "text": "<a class=\"taxi-link-name\" data-pc=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" data-applet=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-mainMiniApp=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-tcapp=\"tctclient://flutter/page?route=takecar_home&takeCarType=12&refId=2000200373\" href=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" target=\"_blank\">同程旅行打车</a>"}
+
+data: {"type": "answer", "text": "节省"}
+
+data: {"type": "answer", "text": "体力  \n-"}
+
+data: {"type": "answer", "text": " 出行人群：朋友"}
+
+data: {"type": "answer", "text": "（默认）｜"}
+
+data: {"type": "answer", "text": "人数：1（默认）  \n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "\n\n\n"}
+
+data: {"type": "answer", "text": "# Day1 🌅 晨曦升旗·紫禁城中"}
+
+data: {"type": "answer", "text": "轴线巡礼"}
+
+data: {"type": "answer", "text": "\n\n\n"}
+
+data: {"type": "answer", "text": "# 06:30"}
+
+data: {"type": "answer", "text": "-07:30"}
+
+data: {"type": "answer", "text": " 市内交通"}
+
+data: {"type": "answer", "text": "\n乘坐市内交通前往"}
+
+data: {"type": "answer", "text": " "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_3000.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3000\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3000\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=3000\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=3000\" target=\"_blank\">天安门广场</a>"}
+
+data: {"type": "answer", "text": "，观看庄严的升旗仪式"}
+
+data: {"type": "answer", "text": "。  \n推荐理由："}
+
+data: {"type": "answer", "text": "酒店位于建国门内大街，距天安门约"}
+
+data: {"type": "answer", "text": "5公里，建议"}
+
+data: {"type": "answer", "text": "提前规划出行时间，避开早"}
+
+data: {"type": "answer", "text": "高峰拥堵，确保准时抵达"}
+
+data: {"type": "answer", "text": "观礼区。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 07:30"}
+
+data: {"type": "answer", "text": "-09:00"}
+
+data: {"type": "answer", "text": " 游览景点"}
+
+data: {"type": "answer", "text": "\n游览 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_3000.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3000\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3000\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=3000\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=3000\" target=\"_blank\">天安门广场</a>"}
+
+data: {"type": "answer", "text": "，参观人民英雄"}
+
+data: {"type": "answer", "text": "纪念碑、毛主席纪念堂（"}
+
+data: {"type": "answer", "text": "需提前预约）。"}
+
+data: {"type": "answer", "text": "  \n核心体验："}
+
+data: {"type": "answer", "text": "世界最大城市广场，中轴线核心"}
+
+data: {"type": "answer", "text": "地标。清晨升"}
+
+data: {"type": "answer", "text": "旗仪式庄严肃穆，广场"}
+
+data: {"type": "answer", "text": "四周环绕天安门城楼"}
+
+data: {"type": "answer", "text": "、国家博物馆、"}
+
+data: {"type": "answer", "text": "人民大会堂，"}
+
+data: {"type": "answer", "text": "是感受中国精神"}
+
+data: {"type": "answer", "text": "的必到之地。"}
+
+data: {"type": "answer", "text": "  \n游览攻略："}
+
+data: {"type": "answer", "text": "建议携带身份证，安检"}
+
+data: {"type": "answer", "text": "严格，禁止携带打"}
+
+data: {"type": "answer", "text": "火机、大"}
+
+data: {"type": "answer", "text": "件行李；毛主席"}
+
+data: {"type": "answer", "text": "纪念堂需提前在"}
+
+data: {"type": "answer", "text": "同程旅行APP预约"}
+
+data: {"type": "answer", "text": "，每日限流，"}
+
+data: {"type": "answer", "text": "建议尽早入场。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 09:00"}
+
+data: {"type": "answer", "text": "-10:"}
+
+data: {"type": "answer", "text": "00"}
+
+data: {"type": "answer", "text": " 市内交通"}
+
+data: {"type": "answer", "text": "\n乘坐市内交通至前门站，"}
+
+data: {"type": "answer", "text": "步行至 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_3007.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3007\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3007\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=3007\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=3007\" target=\"_blank\">故宫</a>"}
+
+data: {"type": "answer", "text": " 午门入口。  \n推荐理由"}
+
+data: {"type": "answer", "text": "："}
+
+data: {"type": "answer", "text": "从天安门至故宫午门仅需"}
+
+data: {"type": "answer", "text": "步行10分钟，建议"}
+
+data: {"type": "answer", "text": "沿中轴线步行进入"}
+
+data: {"type": "answer", "text": "，感受皇家气派"}
+
+data: {"type": "answer", "text": "；若携带行李，"}
+
+data: {"type": "answer", "text": "可使用"}
+
+data: {"type": "answer", "text": "<a class=\"taxi-link-name\" data-pc=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" data-applet=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-mainMiniApp=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-tcapp=\"tctclient://flutter/page?route=takecar_home&takeCarType=12&refId=2000200373\" href=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" target=\"_blank\">同程旅行打车</a>"}
+
+data: {"type": "answer", "text": "直达。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 10:00"}
+
+data: {"type": "answer", "text": "-14:"}
+
+data: {"type": "answer", "text": "00 游"}
+
+data: {"type": "answer", "text": "览景点"}
+
+data: {"type": "answer", "text": "\n深度游览 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_3007.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3007\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3007\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=3007\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=3007\" target=\"_blank\">故宫</a>"}
+
+data: {"type": "answer", "text": "，参观太和殿、中"}
+
+data: {"type": "answer", "text": "和殿、保"}
+
+data: {"type": "answer", "text": "和殿、乾"}
+
+data: {"type": "answer", "text": "清宫、坤"}
+
+data: {"type": "answer", "text": "宁宫及珍宝馆。"}
+
+data: {"type": "answer", "text": "  \n核心体验："}
+
+data: {"type": "answer", "text": "明清两代24位皇帝的居"}
+
+data: {"type": "answer", "text": "所，72万平方米"}
+
+data: {"type": "answer", "text": "宫殿群，90"}
+
+data: {"type": "answer", "text": "00余间"}
+
+data: {"type": "answer", "text": "房屋，馆藏文物超"}
+
+data: {"type": "answer", "text": "186万件。"}
+
+data: {"type": "answer", "text": "中轴线建筑"}
+
+data: {"type": "answer", "text": "恢弘壮丽，珍"}
+
+data: {"type": "answer", "text": "宝馆内金器"}
+
+data: {"type": "answer", "text": "玉器璀璨夺目，堪称"}
+
+data: {"type": "answer", "text": "中华文明的巅峰"}
+
+data: {"type": "answer", "text": "缩影。"}
+
+data: {"type": "answer", "text": "  \n游览攻略："}
+
+data: {"type": "answer", "text": "建议租用电子讲解器（"}
+
+data: {"type": "answer", "text": "约30元）或"}
+
+data: {"type": "answer", "text": "跟随导游，重点"}
+
+data: {"type": "answer", "text": "打卡“三大殿”与"}
+
+data: {"type": "answer", "text": "“后三宫”"}
+
+data: {"type": "answer", "text": "；珍宝馆"}
+
+data: {"type": "answer", "text": "需另购票，建议"}
+
+data: {"type": "answer", "text": "预留1小时；"}
+
+data: {"type": "answer", "text": "神武门为"}
+
+data: {"type": "answer", "text": "出口，直对"}
+
+data: {"type": "answer", "text": "景山公园。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 14:00-14:30 午餐"}
+
+data: {"type": "answer", "text": "\n"}
+
+data: {"type": "answer", "text": "在故宫冰窖餐厅用午餐，推荐宫廷"}
+
+data: {"type": "answer", "text": "风味套餐、御"}
+
+data: {"type": "answer", "text": "膳小点，环境"}
+
+data: {"type": "answer", "text": "古雅，可"}
+
+data: {"type": "answer", "text": "边用餐边欣赏"}
+
+data: {"type": "answer", "text": "故宫一角。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 14:30"}
+
+data: {"type": "answer", "text": "-15:"}
+
+data: {"type": "answer", "text": "30 游"}
+
+data: {"type": "answer", "text": "览景点"}
+
+data: {"type": "answer", "text": "\n步行至 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_3510.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3510\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3510\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=3510\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=3510\" target=\"_blank\">景山公园</a>"}
+
+data: {"type": "answer", "text": "，登顶万春亭，"}
+
+data: {"type": "answer", "text": "俯瞰故宫全"}
+
+data: {"type": "answer", "text": "貌。  \n核心"}
+
+data: {"type": "answer", "text": "体验："}
+
+data: {"type": "answer", "text": "北京中轴线制"}
+
+data: {"type": "answer", "text": "高点，登"}
+
+data: {"type": "answer", "text": "顶后可一览"}
+
+data: {"type": "answer", "text": "紫禁城金"}
+
+data: {"type": "answer", "text": "瓦红墙、"}
+
+data: {"type": "answer", "text": "鳞次栉比的宫殿"}
+
+data: {"type": "answer", "text": "群，是拍摄故宫全景的最佳"}
+
+data: {"type": "answer", "text": "机位，尤其"}
+
+data: {"type": "answer", "text": "夕阳时分光影"}
+
+data: {"type": "answer", "text": "绝美。"}
+
+data: {"type": "answer", "text": "  \n游览攻略："}
+
+data: {"type": "answer", "text": "门票仅2元，无需预约；建议从"}
+
+data: {"type": "answer", "text": "北门进入，沿"}
+
+data: {"type": "answer", "text": "中轴线缓"}
+
+data: {"type": "answer", "text": "步登顶，"}
+
+data: {"type": "answer", "text": "约20分钟可达"}
+
+data: {"type": "answer", "text": "万春亭；山顶"}
+
+data: {"type": "answer", "text": "风大，建议"}
+
+data: {"type": "answer", "text": "备薄外套。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 15:30"}
+
+data: {"type": "answer", "text": "-16:"}
+
+data: {"type": "answer", "text": "30 市内交通"}
+
+data: {"type": "answer", "text": "\n乘坐市内交通至"}
+
+data: {"type": "answer", "text": "前门站，"}
+
+data: {"type": "answer", "text": "步行至 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_949510.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=949510\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=949510\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=949510\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=949510\" target=\"_blank\">前门大街</a>"}
+
+data: {"type": "answer", "text": "。  \n推荐理由"}
+
+data: {"type": "answer", "text": "："}
+
+data: {"type": "answer", "text": "前门大街为明清商业古街，步行"}
+
+data: {"type": "answer", "text": "可达，沿途老字号"}
+
+data: {"type": "answer", "text": "林立，是"}
+
+data: {"type": "answer", "text": "体验老北京市"}
+
+data: {"type": "answer", "text": "井文化与美食的绝佳起点"}
+
+data: {"type": "answer", "text": "。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 16:30"}
+
+data: {"type": "answer", "text": "-19:"}
+
+data: {"type": "answer", "text": "00 游"}
+
+data: {"type": "answer", "text": "览景点"}
+
+data: {"type": "answer", "text": "\n游览 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_949510.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=949510\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=949510\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=949510\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=949510\" target=\"_blank\">前门大街</a>"}
+
+data: {"type": "answer", "text": "，"}
+
+data: {"type": "answer", "text": "打卡便宜坊、"}
+
+data: {"type": "answer", "text": "全聚德、"}
+
+data: {"type": "answer", "text": "都一处烧麦、"}
+
+data: {"type": "answer", "text": "爆肚、糖"}
+
+data: {"type": "answer", "text": "葫芦。  \n核心"}
+
+data: {"type": "answer", "text": "体验："}
+
+data: {"type": "answer", "text": "百年商业街，青"}
+
+data: {"type": "answer", "text": "砖灰瓦间"}
+
+data: {"type": "answer", "text": "藏着老北京的烟火"}
+
+data: {"type": "answer", "text": "气。烤鸭香气"}
+
+data: {"type": "answer", "text": "四溢，糖"}
+
+data: {"type": "answer", "text": "葫芦晶莹剔透，"}
+
+data: {"type": "answer", "text": "爆肚脆嫩爽口，"}
+
+data: {"type": "answer", "text": "是味觉与视觉的双重"}
+
+data: {"type": "answer", "text": "盛宴。"}
+
+data: {"type": "answer", "text": "  \n游览攻略："}
+
+data: {"type": "answer", "text": "建议避开17:00–"}
+
+data: {"type": "answer", "text": "18:0"}
+
+data: {"type": "answer", "text": "0高峰人流；"}
+
+data: {"type": "answer", "text": "全聚德可"}
+
+data: {"type": "answer", "text": "选前门店，"}
+
+data: {"type": "answer", "text": "便宜坊以焖炉烤"}
+
+data: {"type": "answer", "text": "鸭闻名；可顺"}
+
+data: {"type": "answer", "text": "路逛大栅栏，"}
+
+data: {"type": "answer", "text": "体验百年老店如"}
+
+data: {"type": "answer", "text": "瑞蚨祥、"}
+
+data: {"type": "answer", "text": "张一元。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 19:00-"}
+
+data: {"type": "answer", "text": "19:4"}
+
+data: {"type": "answer", "text": "5 市内交通"}
+
+data: {"type": "answer", "text": "\n乘坐市内交通返回"}
+
+data: {"type": "answer", "text": " "}
+
+data: {"type": "answer", "text": "<a class=\"hotel-link-name\" data-pc=\"https://www.ly.com/hotel/hoteldetail?a=b&hotelId=27776987&inDate=2026-05-12&outDate=2026-05-14&refId=2000305426&refid=2000305426\" data-mainMiniApp=\"/page/hotel/pages/sky/detail/index?a=b&hotelid=27776987&isOutLand=0&indate=2026-05-12&outdate=2026-05-14&timeZone=8&refId=2000305426&refid=2000305426\" data-tcapp=\"tctclient://hotel/details?a=b&hotelId=27776987&checkIn=2026-05-12&checkOut=2026-05-14&isGAT=0&isGlobal=0&refId=2000305426&refid=2000305426\" data-elapp=\"eltclient://hotel/details?a=b&hotelId=27776987&checkIn=2026-05-12&checkOut=2026-05-14&isGAT=0&isGlobal=0&refId=2000305426&refid=2000305426\" data-hopegooapp=\"\" data-cstMiniApp=\"/pages/subHotel/pages/detail/detail?refid=&hotelid=27776987&indate=2026-05-12&outdate=2026-05-14&refId=2000305426&refid=2000305426\" href=\"https://m.ly.com/hotel/hoteldetail?a=b&hotelId=27776987&inDate=2026-05-12&outDate=2026-05-14&refId=2000305426&refid=2000305426\" target=\"_blank\">北京华旅宾馆</a>"}
+
+data: {"type": "answer", "text": " 办理入住。"}
+
+data: {"type": "answer", "text": "  \n推荐理由："}
+
+data: {"type": "answer", "text": "酒店位于建国门内"}
+
+data: {"type": "answer", "text": "大街，距前"}
+
+data: {"type": "answer", "text": "门约6公里，交通"}
+
+data: {"type": "answer", "text": "便利，步行可达北京"}
+
+data: {"type": "answer", "text": "站，周边治安"}
+
+data: {"type": "answer", "text": "良好，24小时前"}
+
+data: {"type": "answer", "text": "台与安保系统"}
+
+data: {"type": "answer", "text": "完善，适合夜间"}
+
+data: {"type": "answer", "text": "归宿。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 19:45-21:00 自"}
+
+data: {"type": "answer", "text": "由活动"}
+
+data: {"type": "answer", "text": "\n休息调整，可于酒店茶室小憩，或在"}
+
+data: {"type": "answer", "text": "房间欣赏窗外城市"}
+
+data: {"type": "answer", "text": "夜景。\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "\n\n\n"}
+
+data: {"type": "answer", "text": "# Day2 🪔 天坛祈福·胡同里的文脉回响"}
+
+data: {"type": "answer", "text": "\n\n\n"}
+
+data: {"type": "answer", "text": "# 07:30"}
+
+data: {"type": "answer", "text": "-08:"}
+
+data: {"type": "answer", "text": "30 早餐"}
+
+data: {"type": "answer", "text": "\n在 "}
+
+data: {"type": "answer", "text": "<a class=\"hotel-link-name\" data-pc=\"https://www.ly.com/hotel/hoteldetail?a=b&hotelId=27776987&inDate=2026-05-12&outDate=2026-05-14&refId=2000305426&refid=2000305426\" data-mainMiniApp=\"/page/hotel/pages/sky/detail/index?a=b&hotelid=27776987&isOutLand=0&indate=2026-05-12&outdate=2026-05-14&timeZone=8&refId=2000305426&refid=2000305426\" data-tcapp=\"tctclient://hotel/details?a=b&hotelId=27776987&checkIn=2026-05-12&checkOut=2026-05-14&isGAT=0&isGlobal=0&refId=2000305426&refid=2000305426\" data-elapp=\"eltclient://hotel/details?a=b&hotelId=27776987&checkIn=2026-05-12&checkOut=2026-05-14&isGAT=0&isGlobal=0&refId=2000305426&refid=2000305426\" data-hopegooapp=\"\" data-cstMiniApp=\"/pages/subHotel/pages/detail/detail?refid=&hotelid=27776987&indate=2026-05-12&outdate=2026-05-14&refId=2000305426&refid=2000305426\" href=\"https://m.ly.com/hotel/hoteldetail?a=b&hotelId=27776987&inDate=2026-05-12&outDate=2026-05-14&refId=2000305426&refid=2000305426\" target=\"_blank\">北京华旅宾馆</a>"}
+
+data: {"type": "answer", "text": " "}
+
+data: {"type": "answer", "text": "享用早餐，酒店"}
+
+data: {"type": "answer", "text": "提供中式简餐，可"}
+
+data: {"type": "answer", "text": "选粥品、包子"}
+
+data: {"type": "answer", "text": "、豆浆等。\n\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "# 08:30"}
+
+data: {"type": "answer", "text": "-09:"}
+
+data: {"type": "answer", "text": "30"}
+
+data: {"type": "answer", "text": " 市内交通"}
+
+data: {"type": "answer", "text": "\n乘坐市内交通至天"}
+
+data: {"type": "answer", "text": "坛东门站"}
+
+data: {"type": "answer", "text": "，步行至 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_4464.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=4464\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=4464\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=4464\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=4464\" target=\"_blank\">天坛公园</a>"}
+
+data: {"type": "answer", "text": "。  \n推荐理由"}
+
+data: {"type": "answer", "text": "："}
+
+data: {"type": "answer", "text": "酒店至天坛约7公里，建议选择"}
+
+data: {"type": "answer", "text": "地铁5号线转"}
+
+data: {"type": "answer", "text": "14号线，或"}
+
+data: {"type": "answer", "text": "使用"}
+
+data: {"type": "answer", "text": "<a class=\"taxi-link-name\" data-pc=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" data-applet=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-mainMiniApp=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-tcapp=\"tctclient://flutter/page?route=takecar_home&takeCarType=12&refId=2000200373\" href=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" target=\"_blank\">同程旅行打车</a>"}
+
+data: {"type": "answer", "text": "直达，节省体力"}
+
+data: {"type": "answer", "text": "，避免日晒。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 09:30-12:00"}
+
+data: {"type": "answer", "text": " 游览景点"}
+
+data: {"type": "answer", "text": "\n游览 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_4464.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=4464\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=4464\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=4464\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=4464\" target=\"_blank\">天坛公园</a>"}
+
+data: {"type": "answer", "text": "，参观祈年"}
+
+data: {"type": "answer", "text": "殿、皇穹"}
+
+data: {"type": "answer", "text": "宇、圜丘坛、"}
+
+data: {"type": "answer", "text": "回音壁。"}
+
+data: {"type": "answer", "text": "  \n核心体验："}
+
+data: {"type": "answer", "text": "明清皇帝祭天的神圣"}
+
+data: {"type": "answer", "text": "场所，祈年殿三"}
+
+data: {"type": "answer", "text": "重檐圆顶象征"}
+
+data: {"type": "answer", "text": "“天圆”，"}
+
+data: {"type": "answer", "text": "回音壁可"}
+
+data: {"type": "answer", "text": "传声三米，圜"}
+
+data: {"type": "answer", "text": "丘坛中心石“"}
+
+data: {"type": "answer", "text": "天心石”一步"}
+
+data: {"type": "answer", "text": "一回响，是古代"}
+
+data: {"type": "answer", "text": "声学与礼"}
+
+data: {"type": "answer", "text": "制的奇迹。"}
+
+data: {"type": "answer", "text": "  \n游览攻略："}
+
+data: {"type": "answer", "text": "建议从东门进，沿中轴线依次游览；回音壁需"}
+
+data: {"type": "answer", "text": "轻声说话，体验"}
+
+data: {"type": "answer", "text": "奇妙声学效果；景区"}
+
+data: {"type": "answer", "text": "内有讲解器"}
+
+data: {"type": "answer", "text": "租赁，推荐租"}
+
+data: {"type": "answer", "text": "用了解祭天仪"}
+
+data: {"type": "answer", "text": "轨。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 12:00"}
+
+data: {"type": "answer", "text": "-13:"}
+
+data: {"type": "answer", "text": "00 午"}
+
+data: {"type": "answer", "text": "餐"}
+
+data: {"type": "answer", "text": "\n"}
+
+data: {"type": "answer", "text": "在天坛南门"}
+
+data: {"type": "answer", "text": "附近餐厅用午餐"}
+
+data: {"type": "answer", "text": "，推荐地道炸酱面、"}
+
+data: {"type": "answer", "text": "豆汁儿配"}
+
+data: {"type": "answer", "text": "焦圈、卤"}
+
+data: {"type": "answer", "text": "煮火烧，体验"}
+
+data: {"type": "answer", "text": "老北京平民风味。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 13:00"}
+
+data: {"type": "answer", "text": "-14:"}
+
+data: {"type": "answer", "text": "00"}
+
+data: {"type": "answer", "text": " 市内交通"}
+
+data: {"type": "answer", "text": "\n乘坐市内交通至雍"}
+
+data: {"type": "answer", "text": "和宫站，"}
+
+data: {"type": "answer", "text": "步行至 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_3046.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3046\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3046\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=3046\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=3046\" target=\"_blank\">雍和宫</a>"}
+
+data: {"type": "answer", "text": "。  \n推荐理由"}
+
+data: {"type": "answer", "text": "："}
+
+data: {"type": "answer", "text": "雍和宫距离天坛约8"}
+
+data: {"type": "answer", "text": "公里，建议使用"}
+
+data: {"type": "answer", "text": "<a class=\"taxi-link-name\" data-pc=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" data-applet=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-mainMiniApp=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-tcapp=\"tctclient://flutter/page?route=takecar_home&takeCarType=12&refId=2000200373\" href=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" target=\"_blank\">同程旅行打车</a>"}
+
+data: {"type": "answer", "text": "，"}
+
+data: {"type": "answer", "text": "避免换乘繁琐"}
+
+data: {"type": "answer", "text": "，节省时间。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 14:00"}
+
+data: {"type": "answer", "text": "-15:"}
+
+data: {"type": "answer", "text": "30 游"}
+
+data: {"type": "answer", "text": "览景点"}
+
+data: {"type": "answer", "text": "\n游览 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_3046.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3046\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3046\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=3046\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=3046\" target=\"_blank\">雍和宫</a>"}
+
+data: {"type": "answer", "text": "，参观大雄"}
+
+data: {"type": "answer", "text": "宝殿、万"}
+
+data: {"type": "answer", "text": "福阁、永"}
+
+data: {"type": "answer", "text": "佑殿。  \n核心体验："}
+
+data: {"type": "answer", "text": "北京最大藏传佛教寺院"}
+
+data: {"type": "answer", "text": "，曾为雍"}
+
+data: {"type": "answer", "text": "正帝潜邸，乾隆"}
+
+data: {"type": "answer", "text": "帝出生地。汉"}
+
+data: {"type": "answer", "text": "藏融合建筑风格庄严"}
+
+data: {"type": "answer", "text": "，铜铸弥"}
+
+data: {"type": "answer", "text": "勒佛高2"}
+
+data: {"type": "answer", "text": "6米，香"}
+
+data: {"type": "answer", "text": "火鼎盛，是京城"}
+
+data: {"type": "answer", "text": "信仰与艺术的交汇"}
+
+data: {"type": "answer", "text": "之地。"}
+
+data: {"type": "answer", "text": "  \n游览攻略："}
+
+data: {"type": "answer", "text": "建议顺时针绕"}
+
+data: {"type": "answer", "text": "行，重点观看"}
+
+data: {"type": "answer", "text": "万福阁的巨型"}
+
+data: {"type": "answer", "text": "弥勒佛；"}
+
+data: {"type": "answer", "text": "可请一炷"}
+
+data: {"type": "answer", "text": "香祈福，但"}
+
+data: {"type": "answer", "text": "勿触摸佛像；馆"}
+
+data: {"type": "answer", "text": "内禁止拍照，需"}
+
+data: {"type": "answer", "text": "遵守宗教礼仪。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 15:30"}
+
+data: {"type": "answer", "text": "-16:"}
+
+data: {"type": "answer", "text": "30 游"}
+
+data: {"type": "answer", "text": "览景点"}
+
+data: {"type": "answer", "text": "\n步行至 "}
+
+data: {"type": "answer", "text": "国子监街"}
+
+data: {"type": "answer", "text": "，参观孔庙"}
+
+data: {"type": "answer", "text": "与国子监。"}
+
+data: {"type": "answer", "text": "  \n核心体验："}
+
+data: {"type": "answer", "text": "元明清三代国家最高学府所在地"}
+
+data: {"type": "answer", "text": "，红墙灰"}
+
+data: {"type": "answer", "text": "瓦间古柏"}
+
+data: {"type": "answer", "text": "参天，碑"}
+
+data: {"type": "answer", "text": "林林立，是"}
+
+data: {"type": "answer", "text": "古代“左庙"}
+
+data: {"type": "answer", "text": "右学”礼制的完整"}
+
+data: {"type": "answer", "text": "遗存，静"}
+
+data: {"type": "answer", "text": "谧肃穆，文"}
+
+data: {"type": "answer", "text": "气氤氲。"}
+
+data: {"type": "answer", "text": "  \n游览攻略："}
+
+data: {"type": "answer", "text": "孔庙与国子监联票，建议先"}
+
+data: {"type": "answer", "text": "参观孔庙大"}
+
+data: {"type": "answer", "text": "成殿，再"}
+
+data: {"type": "answer", "text": "至国子监辟"}
+
+data: {"type": "answer", "text": "雍殿，感受古代"}
+
+data: {"type": "answer", "text": "学子“金榜题名”的"}
+
+data: {"type": "answer", "text": "氛围。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 16:30-"}
+
+data: {"type": "answer", "text": "18:0"}
+
+data: {"type": "answer", "text": "0 游览景点"}
+
+data: {"type": "answer", "text": "\n步行至 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_31211.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=31211\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=31211\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=31211\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=31211\" target=\"_blank\">五道营胡同</a>"}
+
+data: {"type": "answer", "text": "，"}
+
+data: {"type": "answer", "text": "打卡咖啡馆、文创"}
+
+data: {"type": "answer", "text": "店、艺术墙"}
+
+data: {"type": "answer", "text": "。  \n核心体验："}
+
+data: {"type": "answer", "text": "从古学宫延伸出的文艺小巷，传统"}
+
+data: {"type": "answer", "text": "四合院与"}
+
+data: {"type": "answer", "text": "现代设计碰撞，咖啡"}
+
+data: {"type": "answer", "text": "香与旧砖"}
+
+data: {"type": "answer", "text": "墙交融，是年轻人"}
+
+data: {"type": "answer", "text": "最爱的“北京"}
+
+data: {"type": "answer", "text": "小众文艺地标"}
+
+data: {"type": "answer", "text": "”。"}
+
+data: {"type": "answer", "text": "  \n游览攻略："}
+
+data: {"type": "answer", "text": "推荐“猫的天空之城"}
+
+data: {"type": "answer", "text": "”书店、胡同"}
+
+data: {"type": "answer", "text": "咖啡馆“C"}
+
+data: {"type": "answer", "text": "afé 5"}
+
+data: {"type": "answer", "text": "”；可拍"}
+
+data: {"type": "answer", "text": "“五道营”"}
+
+data: {"type": "answer", "text": "艺术涂鸦墙，傍晚"}
+
+data: {"type": "answer", "text": "光线柔和，适合"}
+
+data: {"type": "answer", "text": "拍摄氛围感照片"}
+
+data: {"type": "answer", "text": "。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 18:00-"}
+
+data: {"type": "answer", "text": "19:0"}
+
+data: {"type": "answer", "text": "0 餐饮"}
+
+data: {"type": "answer", "text": "\n"}
+
+data: {"type": "answer", "text": "在五道营胡同享用京味私房菜，推荐干"}
+
+data: {"type": "answer", "text": "烧黄鱼、京"}
+
+data: {"type": "answer", "text": "酱肉丝、炸"}
+
+data: {"type": "answer", "text": "灌肠，口味"}
+
+data: {"type": "answer", "text": "地道，环境雅"}
+
+data: {"type": "answer", "text": "致。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 19:00-19:45"}
+
+data: {"type": "answer", "text": " 市内"}
+
+data: {"type": "answer", "text": "交通"}
+
+data: {"type": "answer", "text": "\n乘坐市内交通"}
+
+data: {"type": "answer", "text": "返回 "}
+
+data: {"type": "answer", "text": "<a class=\"hotel-link-name\" data-pc=\"https://www.ly.com/hotel/hoteldetail?a=b&hotelId=27776987&inDate=2026-05-12&outDate=2026-05-14&refId=2000305426&refid=2000305426\" data-mainMiniApp=\"/page/hotel/pages/sky/detail/index?a=b&hotelid=27776987&isOutLand=0&indate=2026-05-12&outdate=2026-05-14&timeZone=8&refId=2000305426&refid=2000305426\" data-tcapp=\"tctclient://hotel/details?a=b&hotelId=27776987&checkIn=2026-05-12&checkOut=2026-05-14&isGAT=0&isGlobal=0&refId=2000305426&refid=2000305426\" data-elapp=\"eltclient://hotel/details?a=b&hotelId=27776987&checkIn=2026-05-12&checkOut=2026-05-14&isGAT=0&isGlobal=0&refId=2000305426&refid=2000305426\" data-hopegooapp=\"\" data-cstMiniApp=\"/pages/subHotel/pages/detail/detail?refid=&hotelid=27776987&indate=2026-05-12&outdate=2026-05-14&refId=2000305426&refid=2000305426\" href=\"https://m.ly.com/hotel/hoteldetail?a=b&hotelId=27776987&inDate=2026-05-12&outDate=2026-05-14&refId=2000305426&refid=2000305426\" target=\"_blank\">北京华旅宾馆</a>"}
+
+data: {"type": "answer", "text": "。"}
+
+data: {"type": "answer", "text": "  \n推荐理由："}
+
+data: {"type": "answer", "text": "酒店位置便利，夜间"}
+
+data: {"type": "answer", "text": "出行安全，建议"}
+
+data: {"type": "answer", "text": "使用"}
+
+data: {"type": "answer", "text": "<a class=\"taxi-link-name\" data-pc=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" data-applet=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-mainMiniApp=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-tcapp=\"tctclient://flutter/page?route=takecar_home&takeCarType=12&refId=2000200373\" href=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" target=\"_blank\">同程旅行打车</a>"}
+
+data: {"type": "answer", "text": "，"}
+
+data: {"type": "answer", "text": "避免深夜地铁拥挤"}
+
+data: {"type": "answer", "text": "。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 19:45"}
+
+data: {"type": "answer", "text": "-21:"}
+
+data: {"type": "answer", "text": "00 自由"}
+
+data: {"type": "answer", "text": "活动"}
+
+data: {"type": "answer", "text": "\n休息放松，可于酒店"}
+
+data: {"type": "answer", "text": "茶室品茶，整理"}
+
+data: {"type": "answer", "text": "照片，为明日行程养"}
+
+data: {"type": "answer", "text": "精蓄锐。\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "\n\n\n"}
+
+data: {"type": "answer", "text": "# Day3 🌊 皇家园林·湖光山色中的历史回响"}
+
+data: {"type": "answer", "text": "\n\n\n"}
+
+data: {"type": "answer", "text": "# 07:30-08:3"}
+
+data: {"type": "answer", "text": "0 早餐"}
+
+data: {"type": "answer", "text": "\n在 "}
+
+data: {"type": "answer", "text": "<a class=\"hotel-link-name\" data-pc=\"https://www.ly.com/hotel/hoteldetail?a=b&hotelId=27776987&inDate=2026-05-12&outDate=2026-05-14&refId=2000305426&refid=2000305426\" data-mainMiniApp=\"/page/hotel/pages/sky/detail/index?a=b&hotelid=27776987&isOutLand=0&indate=2026-05-12&outdate=2026-05-14&timeZone=8&refId=2000305426&refid=2000305426\" data-tcapp=\"tctclient://hotel/details?a=b&hotelId=27776987&checkIn=2026-05-12&checkOut=2026-05-14&isGAT=0&isGlobal=0&refId=2000305426&refid=2000305426\" data-elapp=\"eltclient://hotel/details?a=b&hotelId=27776987&checkIn=2026-05-12&checkOut=2026-05-14&isGAT=0&isGlobal=0&refId=2000305426&refid=2000305426\" data-hopegooapp=\"\" data-cstMiniApp=\"/pages/subHotel/pages/detail/detail?refid=&hotelid=27776987&indate=2026-05-12&outdate=2026-05-14&refId=2000305426&refid=2000305426\" href=\"https://m.ly.com/hotel/hoteldetail?a=b&hotelId=27776987&inDate=2026-05-12&outDate=2026-05-14&refId=2000305426&refid=2000305426\" target=\"_blank\">北京华旅宾馆</a>"}
+
+data: {"type": "answer", "text": " "}
+
+data: {"type": "answer", "text": "享用早餐，建议"}
+
+data: {"type": "answer", "text": "选择清淡粥品，为"}
+
+data: {"type": "answer", "text": "全天徒步储备能量。\n\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "# 08:30-09:30"}
+
+data: {"type": "answer", "text": " 市内"}
+
+data: {"type": "answer", "text": "交通"}
+
+data: {"type": "answer", "text": "\n乘坐市内交通"}
+
+data: {"type": "answer", "text": "至北宫门"}
+
+data: {"type": "answer", "text": "站，步行至"}
+
+data: {"type": "answer", "text": " "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_3023.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3023\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3023\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=3023\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=3023\" target=\"_blank\">颐和园</a>"}
+
+data: {"type": "answer", "text": "。  \n推荐理由："}
+
+data: {"type": "answer", "text": "酒店至颐和园约12公里，建议使用"}
+
+data: {"type": "answer", "text": "<a class=\"taxi-link-name\" data-pc=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" data-applet=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-mainMiniApp=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-tcapp=\"tctclient://flutter/page?route=takecar_home&takeCarType=12&refId=2000200373\" href=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" target=\"_blank\">同程旅行打车</a>"}
+
+data: {"type": "answer", "text": "直达，节省时间，避免换乘疲惫"}
+
+data: {"type": "answer", "text": "。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 09:30"}
+
+data: {"type": "answer", "text": "-12:"}
+
+data: {"type": "answer", "text": "00 游"}
+
+data: {"type": "answer", "text": "览景点"}
+
+data: {"type": "answer", "text": "\n游览 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_3023.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3023\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=3023\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=3023\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=3023\" target=\"_blank\">颐和园</a>"}
+
+data: {"type": "answer", "text": "，漫步长廊、登"}
+
+data: {"type": "answer", "text": "佛香阁、"}
+
+data: {"type": "answer", "text": "泛舟昆明湖。  \n核心"}
+
+data: {"type": "answer", "text": "体验："}
+
+data: {"type": "answer", "text": "中国现存规模最大皇家园林，集"}
+
+data: {"type": "answer", "text": "江南水乡与"}
+
+data: {"type": "answer", "text": "北方雄浑于一体"}
+
+data: {"type": "answer", "text": "。长廊彩"}
+
+data: {"type": "answer", "text": "绘七千余幅"}
+
+data: {"type": "answer", "text": "，佛香阁俯"}
+
+data: {"type": "answer", "text": "瞰万寿山"}
+
+data: {"type": "answer", "text": "与昆明湖，十七"}
+
+data: {"type": "answer", "text": "孔桥倒影"}
+
+data: {"type": "answer", "text": "如虹，是"}
+
+data: {"type": "answer", "text": "“移天缩地在"}
+
+data: {"type": "answer", "text": "君怀”的园林"}
+
+data: {"type": "answer", "text": "典范。"}
+
+data: {"type": "answer", "text": "  \n游览攻略："}
+
+data: {"type": "answer", "text": "建议从北宫门进"}
+
+data: {"type": "answer", "text": "，沿长廊至"}
+
+data: {"type": "answer", "text": "石舫，乘"}
+
+data: {"type": "answer", "text": "游船至南湖岛（"}
+
+data: {"type": "answer", "text": "约40元/"}
+
+data: {"type": "answer", "text": "人），再登佛香阁"}
+
+data: {"type": "answer", "text": "（需另购票）"}
+
+data: {"type": "answer", "text": "；避开正午烈"}
+
+data: {"type": "answer", "text": "日，选择湖边树"}
+
+data: {"type": "answer", "text": "荫漫步。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 12:00-"}
+
+data: {"type": "answer", "text": "12:4"}
+
+data: {"type": "answer", "text": "5 午餐"}
+
+data: {"type": "answer", "text": "\n"}
+
+data: {"type": "answer", "text": "在颐和园内“听鹂馆”餐厅用午餐，推荐宫廷"}
+
+data: {"type": "answer", "text": "菜如松鼠鳜"}
+
+data: {"type": "answer", "text": "鱼、清蒸"}
+
+data: {"type": "answer", "text": "鲥鱼，环境"}
+
+data: {"type": "answer", "text": "清幽，可"}
+
+data: {"type": "answer", "text": "边用餐边赏湖"}
+
+data: {"type": "answer", "text": "景。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 12:45"}
+
+data: {"type": "answer", "text": "-13:"}
+
+data: {"type": "answer", "text": "45"}
+
+data: {"type": "answer", "text": " 市内交通"}
+
+data: {"type": "answer", "text": "\n乘坐市内交通至圆"}
+
+data: {"type": "answer", "text": "明园站，"}
+
+data: {"type": "answer", "text": "步行至 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_32291.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=32291\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=32291\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=32291\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=32291\" target=\"_blank\">圆明园遗址公园</a>"}
+
+data: {"type": "answer", "text": "。  \n推荐理由："}
+
+data: {"type": "answer", "text": "颐和园至圆明园约"}
+
+data: {"type": "answer", "text": "10公里，建议使用"}
+
+data: {"type": "answer", "text": "<a class=\"taxi-link-name\" data-pc=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" data-applet=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-mainMiniApp=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-tcapp=\"tctclient://flutter/page?route=takecar_home&takeCarType=12&refId=2000200373\" href=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" target=\"_blank\">同程旅行打车</a>"}
+
+data: {"type": "answer", "text": "，"}
+
+data: {"type": "answer", "text": "避免公共交通绕行，节省"}
+
+data: {"type": "answer", "text": "体力。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 13:45-15:15"}
+
+data: {"type": "answer", "text": " 游览景点"}
+
+data: {"type": "answer", "text": "\n游览 "}
+
+data: {"type": "answer", "text": "<a class=\"sight-link-name\" data-pc=\"https://www.ly.com/scenery/BookSceneryTicket_32291.html?refid=2000386707&from=&if=&of=sc00006565\" data-applet=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=32291\" data-mainMiniApp=\"/page/top/pages/scenery/detail/detail?refid=2000386707&from=&if=&of=sc00006565&sid=32291\" data-tcapp=\"tctclient://scenic/scenicDetail?refid=2000386707&from=&if=&of=sc00006565&sid=32291\" href=\"https://m.ly.com/scenery_1/detail?refid=2000386707&from=&if=&of=sc00006565&sceneryId=32291\" target=\"_blank\">圆明园遗址公园</a>"}
+
+data: {"type": "answer", "text": "，参观大水法、远"}
+
+data: {"type": "answer", "text": "瀛观、西洋楼遗址"}
+
+data: {"type": "answer", "text": "。  \n核心体验"}
+
+data: {"type": "answer", "text": "："}
+
+data: {"type": "answer", "text": "昔日“万园之"}
+
+data: {"type": "answer", "text": "园”，1860"}
+
+data: {"type": "answer", "text": "年被焚毁，如今"}
+
+data: {"type": "answer", "text": "残垣断壁诉"}
+
+data: {"type": "answer", "text": "说着民族伤痛。湖"}
+
+data: {"type": "answer", "text": "水静谧，石柱"}
+
+data: {"type": "answer", "text": "孤立，是"}
+
+data: {"type": "answer", "text": "历史与美学交织"}
+
+data: {"type": "answer", "text": "的沉思之地。"}
+
+data: {"type": "answer", "text": "  \n游览攻略："}
+
+data: {"type": "answer", "text": "建议租用讲解器，了解"}
+
+data: {"type": "answer", "text": "“十二生肖兽"}
+
+data: {"type": "answer", "text": "首”与火烧"}
+
+data: {"type": "answer", "text": "圆明园的历史；重点"}
+
+data: {"type": "answer", "text": "打卡大水法、海"}
+
+data: {"type": "answer", "text": "晏堂遗址；园区"}
+
+data: {"type": "answer", "text": "广阔，可乘坐"}
+
+data: {"type": "answer", "text": "电瓶车（"}
+
+data: {"type": "answer", "text": "约30元"}
+
+data: {"type": "answer", "text": "）节省体力。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 15:15"}
+
+data: {"type": "answer", "text": "-16:"}
+
+data: {"type": "answer", "text": "30"}
+
+data: {"type": "answer", "text": " 市内交通"}
+
+data: {"type": "answer", "text": "\n使用"}
+
+data: {"type": "answer", "text": "<a class=\"taxi-link-name\" data-pc=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" data-applet=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-mainMiniApp=\"/page/newusecar/index/index?btype=car&stype=CAR_NOW&refid=2000200373&wxrefid=2000200373\" data-tcapp=\"tctclient://flutter/page?route=takecar_home&takeCarType=12&refId=2000200373\" href=\"https://m.ly.com/car/view/main.html#/specialCarIndex/instantCar\" target=\"_blank\">同程旅行打车</a>"}
+
+data: {"type": "answer", "text": "前往"}
+
+data: {"type": "answer", "text": "北京首都国际机场 /"}
+
+data: {"type": "answer", "text": " 北京西"}
+
+data: {"type": "answer", "text": "站（根据返程安排"}
+
+data: {"type": "answer", "text": "选择）。  \n推荐"}
+
+data: {"type": "answer", "text": "理由："}
+
+data: {"type": "answer", "text": "为确保顺利登机/"}
+
+data: {"type": "answer", "text": "乘车，建议预留"}
+
+data: {"type": "answer", "text": "充足时间，机场"}
+
+data: {"type": "answer", "text": "距市区约3"}
+
+data: {"type": "answer", "text": "0公里，高峰期"}
+
+data: {"type": "answer", "text": "车程约6"}
+
+data: {"type": "answer", "text": "0–90分钟；"}
+
+data: {"type": "answer", "text": "西站距市区约10"}
+
+data: {"type": "answer", "text": "公里，车程约3"}
+
+data: {"type": "answer", "text": "0分钟。"}
+
+data: {"type": "answer", "text": "\n\n\n\n"}
+
+data: {"type": "answer", "text": "# 16:30-18:00 候机/候车"}
+
+data: {"type": "answer", "text": "\n办理登机或乘车手续，安心"}
+
+data: {"type": "answer", "text": "候乘。\n\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "# 18:00 返程"}
+
+data: {"type": "answer", "text": "出发"}
+
+data: {"type": "answer", "text": "\n结束北京三日文化"}
+
+data: {"type": "answer", "text": "之旅，带着皇家"}
+
+data: {"type": "answer", "text": "气韵、胡同"}
+
+data: {"type": "answer", "text": "烟火与历史回"}
+
+data: {"type": "answer", "text": "响，踏上归"}
+
+data: {"type": "answer", "text": "途。\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "\n\n\n"}
+
+data: {"type": "answer", "text": "\n# ✈️ 行前准备"}
+
+data: {"type": "answer", "text": "\n1.  所有景点"}
+
+data: {"type": "answer", "text": "（故宫、天"}
+
+data: {"type": "answer", "text": "坛、颐和"}
+
+data: {"type": "answer", "text": "园、圆明园）均"}
+
+data: {"type": "answer", "text": "需提前在同"}
+
+data: {"type": "answer", "text": "程旅行APP实"}
+
+data: {"type": "answer", "text": "名预约购票，建议"}
+
+data: {"type": "answer", "text": "提前3–7"}
+
+data: {"type": "answer", "text": "天完成。\n2"}
+
+data: {"type": "answer", "text": ".  身份证必须"}
+
+data: {"type": "answer", "text": "随身携带，"}
+
+data: {"type": "answer", "text": "所有景点均需刷"}
+
+data: {"type": "answer", "text": "证入园。\n3. "}
+
+data: {"type": "answer", "text": " 酒店"}
+
+data: {"type": "answer", "text": "不主动提供一次性用品"}
+
+data: {"type": "answer", "text": "（牙刷、梳"}
+
+data: {"type": "answer", "text": "子等），如"}
+
+data: {"type": "answer", "text": "需请联系前台索取"}
+
+data: {"type": "answer", "text": "。\n4. "}
+
+data: {"type": "answer", "text": " 北京地铁"}
+
+data: {"type": "answer", "text": "支持“城市通”"}
+
+data: {"type": "answer", "text": "APP扫码乘车，建议"}
+
+data: {"type": "answer", "text": "提前下载绑定支付"}
+
+data: {"type": "answer", "text": "方式。\n\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "\n# 🍂 季节与天气"}
+
+data: {"type": "answer", "text": "注意事项"}
+
+data: {"type": "answer", "text": "\n1.  "}
+
+data: {"type": "answer", "text": "5月北京晴"}
+
+data: {"type": "answer", "text": "朗干燥，白"}
+
+data: {"type": "answer", "text": "天气温高达3"}
+
+data: {"type": "answer", "text": "0℃，紫外线"}
+
+data: {"type": "answer", "text": "强，务必携带防晒"}
+
+data: {"type": "answer", "text": "霜、遮阳帽、墨"}
+
+data: {"type": "answer", "text": "镜。\n2.  "}
+
+data: {"type": "answer", "text": "早晚温差大"}
+
+data: {"type": "answer", "text": "（17℃），"}
+
+data: {"type": "answer", "text": "建议携带薄外套，"}
+
+data: {"type": "answer", "text": "尤其在景山、颐和"}
+
+data: {"type": "answer", "text": "园湖边风大。\n"}
+
+data: {"type": "answer", "text": "3. "}
+
+data: {"type": "answer", "text": " 全程步行较多，建议穿"}
+
+data: {"type": "answer", "text": "舒适防滑运动"}
+
+data: {"type": "answer", "text": "鞋，避免高跟鞋或"}
+
+data: {"type": "answer", "text": "新鞋。\n\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "\n# 🎒 装备清单"}
+
+data: {"type": "answer", "text": "\n1.  必带"}
+
+data: {"type": "answer", "text": "：身份证、手机"}
+
+data: {"type": "answer", "text": "、充电宝、"}
+
+data: {"type": "answer", "text": "保温杯（景区"}
+
+data: {"type": "answer", "text": "饮水点少）、纸"}
+
+data: {"type": "answer", "text": "巾、湿巾。\n2."}
+
+data: {"type": "answer", "text": "  建"}
+
+data: {"type": "answer", "text": "议：便携小"}
+
+data: {"type": "answer", "text": "风扇、防晒衣"}
+
+data: {"type": "answer", "text": "、折叠伞（"}
+
+data: {"type": "answer", "text": "防日晒）、"}
+
+data: {"type": "answer", "text": "相机（故宫、颐和园"}
+
+data: {"type": "answer", "text": "拍照绝佳）。\n3."}
+
+data: {"type": "answer", "text": "  饮食"}
+
+data: {"type": "answer", "text": "：可自备少量"}
+
+data: {"type": "answer", "text": "零食，景区内餐饮"}
+
+data: {"type": "answer", "text": "价格较高。\n\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "\n# 📞 售后"}
+
+data: {"type": "answer", "text": "服务"}
+
+data: {"type": "answer", "text": "\n行程中如遇任何问题"}
+
+data: {"type": "answer", "text": "，如交通延误、酒店"}
+
+data: {"type": "answer", "text": "入住困难、景点预约"}
+
+data: {"type": "answer", "text": "异常等，可随时"}
+
+data: {"type": "answer", "text": "拨打同程旅行2"}
+
+data: {"type": "answer", "text": "4小时服务热线：95"}
+
+data: {"type": "answer", "text": "711，"}
+
+data: {"type": "answer", "text": "专业客服随时为您"}
+
+data: {"type": "answer", "text": "响应。\n"}
+
+data: {"type": "answer", "text": "\n\n"}
+
+data: {"type": "answer", "text": "\n"}
+
+data: {"type": "thinking", "text": "### 规划旅行线路\n#### 基于实时数据与用户线路进行深度分析和规划\n"}
+
+data: {"type": "thinking", "text": "### 分析用户需求\n#### 规划北京三日游，包括酒店选择、景点安排、交通时间等\n"}
+
+data: {"type": "thinking", "text": "### 规划行程\n#### 安排北京三日游，包含景点游览、餐饮体验和交通安排\n"}
+
+data: {"type": "finsh", "text": "max_depth_reached", "ans_msg_id": ""}
+
+data: {"type": "sight", "text": "0"}
+
+data: {"type": "finsh", "text": "", "ans_msg_id": "", "need_recommend": true, "need_itinerary": false, "itinerary_info": {}, "has_public_transport": false, "has_spring_activate": true, "has_travel_plan": true, "has_option": false, "has_hotel_intent": false, "has_sight": false, "has_hotel": false, "has_traffic": false, "is_trip": false}
+
