@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>在线购物三大坑 · 安全教育动画</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    height: 100%;
+    background: linear-gradient(135deg, #ffeaa7, #ffd6e0, #c7ecee);
+    font-family: -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+    overflow: hidden;
+    color: #2d3436;
+  }
+  .stage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* ===== 公用：场景容器 ===== */
+  .scene {
+    position: absolute;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .scene.active { display: flex; }
+  .scene-title {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255,255,255,0.85);
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #2d3436;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    backdrop-filter: blur(8px);
+    z-index: 50;
+  }
+  .scene-title .ep {
+    background: linear-gradient(135deg, #ff6b6b, #ee5253);
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 14px;
+    font-size: 14px;
+    margin-right: 8px;
+  }
+
+  /* ===== 卡通小朋友（公共） ===== */
+  .kid {
+    position: relative;
+    width: 100px;
+    height: 140px;
+  }
+  .kid .head {
+    width: 80px;
+    height: 80px;
+    background: #ffd8b8;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    border: 3px solid #2d3436;
+  }
+  .kid .head::before, .kid .head::after {
+    content: "";
+    position: absolute;
+    width: 8px; height: 8px;
+    background: #2d3436;
+    border-radius: 50%;
+    top: 30px;
+  }
+  .kid .head::before { left: 20px; }
+  .kid .head::after { right: 20px; }
+  .kid .mouth {
+    position: absolute;
+    bottom: 18px; left: 50%;
+    transform: translateX(-50%);
+    width: 18px; height: 8px;
+    border: 2px solid #2d3436;
+    border-top: 0;
+    border-radius: 0 0 14px 14px;
+    background: #ff6b6b;
+  }
+  .kid .body {
+    width: 90px;
+    height: 60px;
+    background: #ffeaa7;
+    margin: -5px auto 0;
+    border: 3px solid #2d3436;
+    border-radius: 14px 14px 0 0;
+  }
+
+  /* ===== 手机 ===== */
+  .phone {
+    width: 180px;
+    height: 320px;
+    background: #2d3436;
+    border-radius: 28px;
+    padding: 14px;
+    position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+  }
+  .phone .screen {
+    width: 100%; height: 100%;
+    background: #fff;
+    border-radius: 16px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  /* ============================================== */
+  /* 场景 1：陌生链接诈骗                            */
+  /* ============================================== */
+  #scene1 {
+    background: linear-gradient(135deg, #ffeaa7, #fab1a0);
+  }
+  .s1-layout {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+  }
+  .popup {
+    position: absolute;
+    inset: 20px;
+    background: linear-gradient(135deg, #ff6b6b, #ee5253);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    animation: popupBlink 0.6s ease infinite alternate;
+    opacity: 0;
+  }
+  .s1-stage-2 .popup { opacity: 1; }
+  @keyframes popupBlink {
+    from { transform: scale(1); box-shadow: 0 0 0 0 rgba(255,107,107,0.5); }
+    to { transform: scale(1.05); box-shadow: 0 0 0 12px rgba(255,107,107,0); }
+  }
+  .popup .gift { font-size: 50px; margin-bottom: 10px; }
+  .popup .text { font-size: 16px; font-weight: bold; line-height: 1.5; }
+  .popup .btn {
+    margin-top: 14px;
+    background: #fff;
+    color: #ee5253;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .monster {
+    position: absolute;
+    width: 90px;
+    height: 90px;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%) translateY(200px);
+    transition: transform 1.2s ease;
+    z-index: 10;
+  }
+  .s1-stage-3 .monster {
+    transform: translateX(-50%) translateY(0);
+  }
+  .monster-body {
+    width: 90px; height: 90px;
+    background: linear-gradient(135deg, #6c5ce7, #5f3dc4);
+    border-radius: 50% 50% 40% 40%;
+    border: 3px solid #2d3436;
+    position: relative;
+  }
+  .monster-body::before, .monster-body::after {
+    content: ""; position: absolute;
+    width: 14px; height: 14px;
+    background: #fff;
+    border-radius: 50%;
+    top: 25px;
+    border: 2px solid #2d3436;
+  }
+  .monster-body::before { left: 18px; }
+  .monster-body::after { right: 18px; }
+  .monster-mask {
+    position: absolute;
+    width: 70px; height: 20px;
+    background: #2d3436;
+    bottom: 25px; left: 10px;
+    border-radius: 4px;
+  }
+  .coin {
+    position: absolute;
+    width: 26px; height: 26px;
+    background: radial-gradient(circle, #ffd700, #ffa502);
+    border-radius: 50%;
+    border: 2px solid #b8860b;
+    color: #b8860b;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+  }
+  .s1-stage-4 .coin {
+    animation: coinFly 1.5s ease forwards;
+  }
+  .coin:nth-child(1) { top: 40%; left: 30%; animation-delay: 0s !important; }
+  .coin:nth-child(2) { top: 45%; left: 35%; animation-delay: 0.2s !important; }
+  .coin:nth-child(3) { top: 50%; left: 28%; animation-delay: 0.4s !important; }
+  @keyframes coinFly {
+    0% { opacity: 1; transform: translate(0, 0); }
+    100% { opacity: 0; transform: translate(300px, -100px) rotate(720deg); }
+  }
+  .warning {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255,107,107,0.92);
+    color: #fff;
+    text-align: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: opacity 0.6s;
+    z-index: 30;
+  }
+  .s1-stage-5 .warning, .s2-stage-5 .warning, .s3-stage-5 .warning {
+    opacity: 1;
+  }
+  .warning .icon {
+    font-size: 100px;
+    animation: warnPulse 1s ease infinite;
+  }
+  @keyframes warnPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+  }
+  .warning .title {
+    font-size: 38px;
+    font-weight: bold;
+    margin: 20px 0 8px;
+    letter-spacing: 4px;
+  }
+  .warning .sub {
+    font-size: 18px;
+    background: rgba(255,255,255,0.25);
+    padding: 8px 20px;
+    border-radius: 20px;
+  }
+
+  /* ============================================== */
+  /* 场景 2：个人信息泄露                            */
+  /* ============================================== */
+  #scene2 {
+    background: linear-gradient(135deg, #c7ecee, #a8e6cf);
+  }
+  .s2-layout {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    position: relative;
+  }
+  .laptop {
+    width: 280px;
+    height: 200px;
+    position: relative;
+  }
+  .laptop-screen {
+    width: 280px;
+    height: 180px;
+    background: #2d3436;
+    border-radius: 10px 10px 4px 4px;
+    padding: 12px;
+    position: relative;
+  }
+  .laptop-screen .form {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    border-radius: 4px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .laptop-screen .form-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11px;
+  }
+  .form-row .label {
+    width: 50px;
+    color: #2d3436;
+    font-weight: bold;
+  }
+  .form-row .input {
+    flex: 1;
+    height: 16px;
+    background: #f1f2f6;
+    border-radius: 3px;
+    position: relative;
+    overflow: hidden;
+  }
+  .input-fill {
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 10px;
+    color: #2d3436;
+    opacity: 0;
+  }
+  .s2-stage-2 .input-fill {
+    animation: typeIn 1.5s ease forwards;
+  }
+  .input-fill:nth-of-type(2) { animation-delay: 0.4s !important; }
+  .input-fill:nth-of-type(3) { animation-delay: 0.8s !important; }
+  @keyframes typeIn {
+    to { opacity: 1; }
+  }
+  .laptop-base {
+    width: 320px;
+    height: 12px;
+    background: #636e72;
+    margin: 0 -20px;
+    border-radius: 0 0 10px 10px;
+  }
+  .envelope {
+    position: absolute;
+    width: 40px; height: 28px;
+    background: #fff;
+    border: 2px solid #2d3436;
+    border-radius: 3px;
+    opacity: 0;
+    z-index: 5;
+  }
+  .envelope::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, transparent 49%, #2d3436 49%, #2d3436 51%, transparent 51%);
+  }
+  .envelope::after {
+    content: "✉";
+    position: absolute;
+    bottom: -2px; right: 2px;
+    font-size: 10px;
+  }
+  .s2-stage-3 .envelope {
+    animation: envelopeFly 2s ease forwards;
+  }
+  .envelope:nth-of-type(1) { top: 30%; left: 50%; animation-delay: 0s !important; }
+  .envelope:nth-of-type(2) { top: 40%; left: 52%; animation-delay: 0.3s !important; }
+  .envelope:nth-of-type(3) { top: 50%; left: 48%; animation-delay: 0.6s !important; }
+  .envelope:nth-of-type(4) { top: 35%; left: 54%; animation-delay: 0.9s !important; }
+  @keyframes envelopeFly {
+    0% { opacity: 0; transform: translate(0, 0) rotate(0deg); }
+    20% { opacity: 1; }
+    100% { opacity: 0; transform: translate(400px, -50px) rotate(360deg); }
+  }
+  .black-hand {
+    position: absolute;
+    right: -120px;
+    top: 30%;
+    font-size: 100px;
+    opacity: 0;
+    transform: translateX(50px);
+    transition: all 0.8s ease;
+    z-index: 6;
+  }
+  .s2-stage-3 .black-hand {
+    opacity: 1;
+    transform: translateX(0);
+    animation: handGrab 1.2s ease infinite;
+  }
+  @keyframes handGrab {
+    0%, 100% { transform: translateX(0) rotate(-10deg); }
+    50% { transform: translateX(-30px) rotate(5deg); }
+  }
+  .spam-pile {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    display: flex;
+    gap: 6px;
+    transition: transform 0.6s ease;
+  }
+  .s2-stage-4 .spam-pile { transform: translateX(-50%) scale(1); }
+  .spam {
+    width: 50px; height: 60px;
+    background: linear-gradient(135deg, #ff7675, #fd79a8);
+    border: 2px solid #2d3436;
+    border-radius: 4px;
+    position: relative;
+    animation: spamShake 0.3s ease infinite;
+  }
+  .spam:nth-child(2) { background: linear-gradient(135deg, #74b9ff, #0984e3); animation-delay: 0.1s; }
+  .spam:nth-child(3) { background: linear-gradient(135deg, #fdcb6e, #e17055); animation-delay: 0.2s; }
+  .spam:nth-child(4) { background: linear-gradient(135deg, #a29bfe, #6c5ce7); animation-delay: 0.15s; }
+  .spam:nth-child(5) { background: linear-gradient(135deg, #55efc4, #00b894); animation-delay: 0.25s; }
+  .spam::before {
+    content: "广告";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 11px;
+    color: #fff;
+    font-weight: bold;
+  }
+  @keyframes spamShake {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-3px); }
+  }
+
+  /* ============================================== */
+  /* 场景 3：冲动消费                                */
+  /* ============================================== */
+  #scene3 {
+    background: linear-gradient(135deg, #ffd6e0, #ffeaa7);
+  }
+  .s3-layout {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+  }
+  .live-room {
+    position: absolute;
+    inset: 18px;
+    background: linear-gradient(135deg, #ff7675, #fab1a0);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    overflow: hidden;
+  }
+  .live-host {
+    font-size: 50px;
+    animation: hostWave 0.6s ease infinite alternate;
+  }
+  @keyframes hostWave {
+    from { transform: rotate(-10deg) scale(1); }
+    to { transform: rotate(10deg) scale(1.1); }
+  }
+  .live-msg {
+    background: #fff;
+    color: #ee5253;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: bold;
+    margin-top: 8px;
+    animation: msgFlash 0.4s ease infinite alternate;
+  }
+  @keyframes msgFlash {
+    from { transform: scale(1); }
+    to { transform: scale(1.1); }
+  }
+  .countdown {
+    position: absolute;
+    top: 10px; right: 10px;
+    width: 32px; height: 32px;
+    background: #fff;
+    color: #ee5253;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 16px;
+    border: 2px solid #ee5253;
+  }
+  .s3-stage-2 .countdown {
+    animation: countDown 1s linear infinite;
+  }
+  @keyframes countDown {
+    0% { transform: scale(1.2); background: #fff; }
+    100% { transform: scale(1); background: #ffe66d; }
+  }
+  .buy-btn {
+    margin-top: 10px;
+    background: #ffd700;
+    color: #2d3436;
+    padding: 6px 18px;
+    border-radius: 18px;
+    font-weight: bold;
+    font-size: 13px;
+    border: 2px solid #2d3436;
+  }
+  .s3-stage-2 .buy-btn {
+    animation: btnPress 0.5s ease infinite;
+  }
+  @keyframes btnPress {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.85); background: #ff6b6b; color: #fff; }
+  }
+  .spark {
+    position: absolute;
+    font-size: 18px;
+    animation: spark 0.6s linear infinite;
+  }
+  .s3-stage-2 .spark:nth-of-type(1) { top: 20%; left: 10%; animation-delay: 0s; }
+  .s3-stage-2 .spark:nth-of-type(2) { top: 30%; right: 15%; animation-delay: 0.2s; }
+  .s3-stage-2 .spark:nth-of-type(3) { bottom: 30%; left: 20%; animation-delay: 0.4s; }
+  @keyframes spark {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1.3); }
+  }
+  .delivery-pile {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(200px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.8s cubic-bezier(0.5, 0, 0.5, 1.5);
+  }
+  .s3-stage-3 .delivery-pile { transform: translateX(-50%) translateY(0); }
+  .box-row {
+    display: flex;
+    gap: 6px;
+  }
+  .box-row:not(:first-child) { margin-top: -8px; }
+  .box {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #d4a574, #b8860b);
+    border: 2px solid #5d4037;
+    position: relative;
+  }
+  .box::before {
+    content: "";
+    position: absolute;
+    top: 50%; left: 0; right: 0;
+    height: 3px;
+    background: #5d4037;
+  }
+  .box::after {
+    content: "📦";
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+  }
+  .mom {
+    position: absolute;
+    right: 80px;
+    bottom: 50px;
+    font-size: 60px;
+    opacity: 0;
+    transition: opacity 0.6s;
+  }
+  .s3-stage-3 .mom {
+    opacity: 1;
+    animation: momShake 1s ease infinite;
+  }
+  @keyframes momShake {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+  }
+
+  /* ===== 字幕 ===== */
+  .caption {
+    position: absolute;
+    bottom: 120px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(45,52,54,0.9);
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 12px;
+    font-size: 17px;
+    max-width: 80%;
+    text-align: center;
+    line-height: 1.6;
+    z-index: 20;
+    transition: opacity 0.4s;
+  }
+
+  /* ===== 进度条 + 控制 ===== */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff6b6b, #fdcb6e, #00b894);
+    width: 0;
+    z-index: 100;
+    transition: width 0.3s linear;
+  }
+  .controls {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    background: rgba(255,255,255,0.85);
+    padding: 10px;
+    border-radius: 40px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    z-index: 100;
+  }
+  .controls button {
+    background: transparent;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 24px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    color: #2d3436;
+    font-weight: bold;
+    transition: all 0.2s;
+  }
+  .controls button:hover { background: rgba(0,0,0,0.08); }
+  .controls button.active {
+    background: linear-gradient(135deg, #ff6b6b, #ee5253);
+    color: #fff;
+  }
+  .replay {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: rgba(255,255,255,0.85);
+    border: none;
+    padding: 8px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-family: inherit;
+    font-weight: bold;
+    color: #2d3436;
+    backdrop-filter: blur(10px);
+    z-index: 100;
+  }
+</style>
+</head>
+<body>
+  <div class="progress-bar" id="progress"></div>
+  <button class="replay" id="replayBtn">⟳ 重新播放</button>
+
+  <div class="stage">
+
+    <!-- ========== 场景 1：陌生链接诈骗 ========== -->
+    <section class="scene" id="scene1">
+      <div class="scene-title"><span class="ep">第 1 集</span>陌生链接千万别乱点</div>
+
+      <div class="s1-layout">
+        <div class="kid">
+          <div class="head"><div class="mouth"></div></div>
+          <div class="body"></div>
+        </div>
+
+        <div class="phone">
+          <div class="screen">
+            <!-- 正常屏幕 + 弹窗 + 怪物 + 飞走的金币 -->
+            <div class="popup">
+              <div class="gift">🎁</div>
+              <div class="text">恭喜中奖<br>10000 元！</div>
+              <div class="btn">立即领取</div>
+            </div>
+            <div class="monster">
+              <div class="monster-body"></div>
+              <div class="monster-mask"></div>
+            </div>
+            <div class="coin">¥</div>
+            <div class="coin">¥</div>
+            <div class="coin">¥</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="caption" id="s1-caption">小朋友安静地玩着手机...</div>
+
+      <div class="warning">
+        <div class="icon">⚠️</div>
+        <div class="title">陌生链接 别乱点</div>
+        <div class="sub">看到天上掉馅饼，先想想是不是陷阱</div>
+      </div>
+    </section>
+
+    <!-- ========== 场景 2：个人信息泄露 ========== -->
+    <section class="scene" id="scene2">
+      <div class="scene-title"><span class="ep">第 2 集</span>个人信息别随便告诉陌生人</div>
+
+      <div class="s2-layout">
+        <div class="kid">
+          <div class="head"><div class="mouth"></div></div>
+          <div class="body"></div>
+        </div>
+
+        <div class="laptop">
+          <div class="laptop-screen">
+            <div class="form">
+              <div class="form-row">
+                <span class="label">姓名：</span>
+                <div class="input"><span class="input-fill">小明</span></div>
+              </div>
+              <div class="form-row">
+                <span class="label">电话：</span>
+                <div class="input"><span class="input-fill">138****1234</span></div>
+              </div>
+              <div class="form-row">
+                <span class="label">地址：</span>
+                <div class="input"><span class="input-fill">XX 市 XX 路 XX 号</span></div>
+              </div>
+              <div class="form-row">
+                <span class="label">学校：</span>
+                <div class="input"><span class="input-fill">XX 小学三年级</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="laptop-base"></div>
+        </div>
+
+        <div class="envelope"></div>
+        <div class="envelope"></div>
+        <div class="envelope"></div>
+        <div class="envelope"></div>
+        <div class="black-hand">🖐🏿</div>
+      </div>
+
+      <div class="spam-pile">
+        <div class="spam"></div>
+        <div class="spam"></div>
+        <div class="spam"></div>
+        <div class="spam"></div>
+        <div class="spam"></div>
+      </div>
+
+      <div class="caption" id="s2-caption">小明在网上填写购物信息...</div>
+
+      <div class="warning" style="background: rgba(108,92,231,0.92);">
+        <div class="icon">🔐</div>
+        <div class="title">个人信息 = 钥匙</div>
+        <div class="sub">姓名、电话、住址，别随便交给陌生网站</div>
+      </div>
+    </section>
+
+    <!-- ========== 场景 3：冲动消费 ========== -->
+    <section class="scene" id="scene3">
+      <div class="scene-title"><span class="ep">第 3 集</span>下单前先深呼吸三秒</div>
+
+      <div class="s3-layout">
+        <div class="kid">
+          <div class="head"><div class="mouth"></div></div>
+          <div class="body"></div>
+        </div>
+
+        <div class="phone">
+          <div class="screen">
+            <div class="live-room">
+              <div class="countdown">3</div>
+              <div class="spark">✨</div>
+              <div class="spark">💥</div>
+              <div class="spark">⚡</div>
+              <div class="live-host">🤩</div>
+              <div class="live-msg">只剩最后 10 件！</div>
+              <div class="buy-btn">立即购买</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="delivery-pile">
+        <div class="box-row">
+          <div class="box"></div>
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="box-row">
+          <div class="box"></div>
+          <div class="box"></div>
+        </div>
+        <div class="box-row">
+          <div class="box"></div>
+        </div>
+      </div>
+      <div class="mom">🤦‍♀️</div>
+
+      <div class="caption" id="s3-caption">直播间在卖东西，主播很热情...</div>
+
+      <div class="warning" style="background: rgba(0,184,148,0.92);">
+        <div class="icon">⏸️</div>
+        <div class="title">先想 3 秒 再下单</div>
+        <div class="sub">真的需要吗？喜欢一阵就忘记了吗？</div>
+      </div>
+    </section>
+
+  </div>
+
+  <div class="controls">
+    <button onclick="playScene(0)">第 1 集 · 陌生链接</button>
+    <button onclick="playScene(1)">第 2 集 · 信息泄露</button>
+    <button onclick="playScene(2)">第 3 集 · 冲动消费</button>
+  </div>
+
+<script>
+  const scenes = document.querySelectorAll('.scene');
+  const buttons = document.querySelectorAll('.controls button');
+  const progress = document.getElementById('progress');
+
+  let current = -1;
+  let allTimers = [];
+
+  // 每个场景的分镜：[时间ms, stage类名, 字幕]
+  const storyboards = [
+    // 场景 1
+    [
+      [0,     's1-stage-1', '小朋友安静地玩着手机...'],
+      [3000,  's1-stage-2', '手机突然弹出："恭喜中奖一万元！"'],
+      [8000,  's1-stage-3', '一只戴口罩的小怪兽从屏幕里爬出来！'],
+      [14000, 's1-stage-4', '小怪兽把家里的钱全部抢走了...'],
+      [20000, 's1-stage-5', ''],
+      [27000, null, null]
+    ],
+    // 场景 2
+    [
+      [0,     's2-stage-1', '小明在一个不熟悉的网站买东西...'],
+      [2000,  's2-stage-2', '认认真真填上：姓名、电话、地址、学校'],
+      [8000,  's2-stage-3', '信息变成一封封信，被黑手全部抓走！'],
+      [14000, 's2-stage-4', '从此家里电话不停响，垃圾广告塞爆门口'],
+      [20000, 's2-stage-5', ''],
+      [27000, null, null]
+    ],
+    // 场景 3
+    [
+      [0,     's3-stage-1', '直播间在卖东西，主播很热情...'],
+      [3000,  's3-stage-2', '"还剩 10 件！3、2、1..."  手忙脚乱按下购买'],
+      [10000, 's3-stage-3', '第二天，一堆快递送到家，全是用不上的'],
+      [18000, 's3-stage-4', '妈妈摇着头："你又乱买了..."'],
+      [22000, 's3-stage-5', ''],
+      [27000, null, null]
+    ]
+  ];
+
+  const sceneDurations = [27000, 27000, 27000];
+
+  function clearAll() {
+    allTimers.forEach(t => clearTimeout(t));
+    allTimers = [];
+  }
+
+  function resetSceneClasses(sceneEl, prefix) {
+    sceneEl.className = 'scene active';
+    sceneEl.id = sceneEl.id;
+  }
+
+  function playScene(idx) {
+    clearAll();
+    scenes.forEach(s => {
+      s.classList.remove('active');
+      // 清掉所有 stage 类
+      s.className = s.className.replace(/s\d-stage-\d/g, '').trim();
+    });
+    buttons.forEach(b => b.classList.remove('active'));
+
+    current = idx;
+    const scene = scenes[idx];
+    scene.classList.add('active');
+    buttons[idx].classList.add('active');
+
+    const board = storyboards[idx];
+    const caption = scene.querySelector('.caption');
+
+    board.forEach(([time, stage, text]) => {
+      allTimers.push(setTimeout(() => {
+        if (stage) {
+          // 移除其他 stage 类
+          scene.className = scene.className.replace(/s\d-stage-\d/g, '').trim();
+          scene.classList.add(stage);
+        }
+        if (text !== null) {
+          if (text === '') {
+            caption.style.opacity = '0';
+          } else {
+            caption.style.opacity = '1';
+            caption.textContent = text;
+          }
+        }
+      }, time));
+    });
+
+    // 进度条
+    const duration = sceneDurations[idx];
+    let elapsed = 0;
+    progress.style.width = '0%';
+    const progressInterval = setInterval(() => {
+      elapsed += 100;
+      progress.style.width = Math.min(100, (elapsed / duration) * 100) + '%';
+      if (elapsed >= duration) clearInterval(progressInterval);
+    }, 100);
+
+    // 自动播放下一集
+    allTimers.push(setTimeout(() => {
+      clearInterval(progressInterval);
+      playScene((idx + 1) % scenes.length);
+    }, duration));
+  }
+
+  document.getElementById('replayBtn').onclick = () => playScene(current >= 0 ? current : 0);
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'ArrowRight') playScene((current + 1) % scenes.length);
+    else if (e.key === 'ArrowLeft') playScene((current - 1 + scenes.length) % scenes.length);
+    else if (e.key === ' ') { e.preventDefault(); playScene(current); }
+  });
+
+  // 启动
+  playScene(0);
+</script>
+</body>
+</html>
