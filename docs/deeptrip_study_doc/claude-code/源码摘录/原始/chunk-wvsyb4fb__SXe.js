@@ -1,0 +1,1 @@
+function SXe(){return async()=>({behavior:"deny",message:"Tool use is not allowed during compaction",decisionReason:{type:"other",reason:"compaction agent should only produce text summary"}})}

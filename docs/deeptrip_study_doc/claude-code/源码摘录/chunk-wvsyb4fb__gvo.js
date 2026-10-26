@@ -1,0 +1,87 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 228520856; external dependencies are not included.
+async function gvo(e, n, r) {
+  let s = qf(e),
+    h = r?.userWaitStartedAt ?? performance.now(),
+    y = r?.querySource,
+    b = r?.trigger ?? "auto",
+    w = r?.compactionKind ?? bXe(b, r?.thresholdSource),
+    H = FV(),
+    q = Sre(y) ? Ren(e, RT) : void 0,
+    K = HK(n.toolUseContext.onCompactEvent),
+    Q;
+  try {
+    Q = await $ve(e, n, {
+      customInstructions: r?.customInstructions,
+      initialTokenGap: r?.initialTokenGap,
+      compactionRequestKind: w,
+      allowFallback: r?.allowLastResort !== !1,
+      keepNoRound: r?.keepNoRound,
+      skipMessageCacheMarkers: q === !0 && IHs(),
+      onResponseLength: r?.onResponseLength,
+    });
+  } finally {
+    K();
+  }
+  if (Q.ok && n.toolUseContext.abortController.signal.aborted)
+    Q = {
+      ok: !1,
+      reason: "aborted",
+      attempts: Q.result.attempt,
+      totalGroups: Q.result.totalGroups,
+    };
+  if (!Q.ok) {
+    let Se = Xy(
+        n.toolUseContext.options.mainLoopModel,
+        Ng(n.toolUseContext),
+        Yy(n.toolUseContext.permissionLayers),
+      ),
+      be = Q.reason === "aborted" ? fAe(n.toolUseContext.abortController.signal.reason) : void 0;
+    if (
+      (i("tengu_reactive_compact_failed", {
+        ...(Se && { effort_level: c(Se) }),
+        querySource: y === void 0 ? void 0 : us(y),
+        reason: c(Q.reason),
+        abortKind: de(be),
+        detail: Q.isDlpDenied ? mtt("dlp_request_denied", Q.status) : de(Q.errorKind),
+        status: Q.status,
+        trigger: c(b),
+        preCompactTokens: s,
+        attempts: Q.attempts,
+        totalGroups: Q.totalGroups,
+        durationMs: Math.round(performance.now() - h),
+        precomputedKind: de(r?.precomputedKind),
+        precomputedFailureCause: de(r?.precomputedFailureCause),
+        thresholdSource: de(r?.thresholdSource),
+        autoCompactWindow: r?.thresholdWindow?.window,
+        autoCompactWindowOrigin: de(r?.thresholdWindow?.origin),
+        manualPrecomputeReuse: de(r?.manualPrecomputeReuse),
+        splitKind: de(Q.splitKind),
+        headTruncations: Q.headTruncations,
+        cacheCold: q,
+      }),
+      be !== void 0)
+    )
+      if (PVo(be)) p("compact_reactive", "compact_reactive_aborted");
+      else m("compact_reactive", `compact_reactive_aborted_${be}`);
+    else m("compact_reactive", `compact_reactive_${Q.reason}`);
+    return { ok: !1, reason: Q.reason, detail: Q.detail };
+  }
+  return jRr({
+    compactResult: Q.result,
+    messagesToPreserve: Q.result.messagesToPreserve,
+    preCompactMessages: e,
+    preCompactTokens: s,
+    startTime: h,
+    cacheSafeParams: n,
+    querySource: y,
+    trigger: b,
+    thresholdSource: r?.thresholdSource,
+    thresholdWindow: r?.thresholdWindow,
+    compactionKind: w,
+    precomputed: !1,
+    manualPrecomputeReuse: r?.manualPrecomputeReuse,
+    mainChainTailAtStart: H,
+    cacheCold: q,
+  });
+}

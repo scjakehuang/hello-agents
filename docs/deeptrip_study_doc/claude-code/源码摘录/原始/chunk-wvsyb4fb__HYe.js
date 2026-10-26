@@ -1,0 +1,1 @@
+function HYe(e,n,r,s=n,h){let y=h??QQ(n,r),b=r.enabled?y:n,w=b-20000,H=r.testBlockingOverride,q=H!==void 0&&!isNaN(H)&&H>0?H:s-3000,K=Math.max(0,Math.round((b-e)/b*100));if(e>=q)return{level:"blocked",pctLeft:K};if(r.enabled&&e>=y)return{level:"compact",pctLeft:K};if(e>=w)return{level:"warn",pctLeft:K};return{level:"ok"}}

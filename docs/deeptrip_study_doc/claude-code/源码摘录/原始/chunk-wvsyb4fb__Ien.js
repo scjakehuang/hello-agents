@@ -1,0 +1,1 @@
+function Ien(e){if(!dme(e)||!e.errorDetails)return;let{actualTokens:n,limitTokens:r}=h8e(e.errorDetails);if(n===void 0||r===void 0)return;let s=n-r;return s>0?s:void 0}

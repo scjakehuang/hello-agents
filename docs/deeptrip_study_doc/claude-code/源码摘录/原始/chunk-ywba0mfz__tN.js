@@ -1,0 +1,1 @@
+function tN(){if(a.CLAUDE_CODE_REMOTE){if(!gn.isOpen())return!1}return!0}

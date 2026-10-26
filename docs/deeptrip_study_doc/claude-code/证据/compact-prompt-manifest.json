@@ -1,0 +1,16 @@
+{
+  "binary_sha256": "5b113a7752119470f1da419cb0e608af3361cae25b614216b13022093958fb2a",
+  "records": [
+    {
+      "label": "prompt templates and variant selection",
+      "source": "recovered/chunk-wvsyb4fb.js",
+      "source_sha256": "ba7e87b84b5de6ccad7d1e256b6cd5acfd4e2e5d3e02a54c29412eb565c2329c",
+      "source_byte_start": 2360852,
+      "source_byte_length": 20393,
+      "binary_file_offset": 228483007,
+      "sha256": "4b325ce51b8bbd4df5145a01b779775a806dbc573d1fbd99c4036d7b17789692",
+      "raw_path": "compact-extra-focus/prompt-template-bundle.js",
+      "readable_path": "compact-extra-readable/prompt-template-bundle.js"
+    }
+  ]
+}

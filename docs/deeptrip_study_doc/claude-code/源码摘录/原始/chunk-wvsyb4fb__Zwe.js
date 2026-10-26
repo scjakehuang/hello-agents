@@ -1,0 +1,1 @@
+function Zwe(){let e=a.CLAUDE_CODE_CURRIED_TRINKET??k(_ur,"control");return yur.find((n)=>n===e)??"control"}

@@ -1,0 +1,9 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 228508344; external dependencies are not included.
+function Pur(e) {
+  let n = e.at(-1)?.[0],
+    r = e.at(-2);
+  if (e.length < 3 || n === void 0 || !MM(n) || r?.[0] === void 0 || !Gve(r[0]) || !xHs()) return;
+  let h = e[0]?.find(ho)?.compactMetadata?.preservedMessages?.uuids;
+  return !(Array.isArray(h) && h.includes(n.uuid)) && Og(r) <= Aur ? e.length - 2 : void 0;
+}

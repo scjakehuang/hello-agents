@@ -1,0 +1,1 @@
+function ff(){if(ut())return!1;return Ms("autoCompactEnabled",!0).value}

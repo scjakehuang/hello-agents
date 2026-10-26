@@ -1,0 +1,1 @@
+function Z4o(e){return e?.compacted===!0&&e.turnCounter<3?(e?.consecutiveRapidRefills??0)+1:0}

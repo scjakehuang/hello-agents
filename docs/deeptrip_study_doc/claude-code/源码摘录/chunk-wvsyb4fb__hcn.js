@@ -1,0 +1,363 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 228645220; external dependencies are not included.
+async function hcn({
+  messages: e,
+  summaryRequest: n,
+  appState: r,
+  context: s,
+  preCompactTokenCount: h,
+  cacheSafeParams: y,
+  stripNonEssential: b = !1,
+  onResponseLength: w,
+  thinkingStripPlan: H,
+  advisorStripPlan: q,
+  compactionRequestKind: K,
+}) {
+  let Q = !b && k("tengu_compact_cache_prefix", !0),
+    Se = HK(s.onCompactEvent),
+    be = Jwe(w, s.onCompactEvent);
+  try {
+    if (Q)
+      try {
+        let xt = await HR({
+            promptMessages: [n],
+            cacheSafeParams: y,
+            canUseTool: SXe(),
+            querySource: "compact",
+            forkLabel: "compact",
+            maxTurns: 1,
+            compactionRequestKind: K,
+            apiAttemptsLeft: s.compactionApiAttemptsLeft,
+            thinkingStripPlan: H,
+            advisorStripPlan: q,
+            fallbackModel: zve(y.model ?? s.options.mainLoopModel, s.options.fallbackModel),
+            skipCacheWrite: !0,
+            skipTranscript: !0,
+            onStreamDelta: be,
+            overrides: { abortController: s.abortController, onRetryStatus: s.onRetryStatus },
+          }),
+          ft = ay(xt.messages),
+          St = Kwe(xt.messages),
+          Wt = F(xt.messages, (Gt) => Gt.type === "assistant" && !Gt.isApiErrorMessage);
+        if (ft && St && !ft.isApiErrorMessage) {
+          if (!St.startsWith(R1))
+            i("tengu_compact_cache_sharing_success", {
+              preCompactTokenCount: h,
+              outputTokens: xt.totalUsage.output_tokens,
+              cacheReadInputTokens: xt.totalUsage.cache_read_input_tokens,
+              cacheCreationInputTokens: xt.totalUsage.cache_creation_input_tokens,
+              cacheHitRate:
+                xt.totalUsage.cache_read_input_tokens > 0
+                  ? xt.totalUsage.cache_read_input_tokens /
+                    (xt.totalUsage.cache_read_input_tokens +
+                      xt.totalUsage.cache_creation_input_tokens +
+                      xt.totalUsage.input_tokens)
+                  : 0,
+              forkAssistantMessageCount: Wt,
+            });
+          return { response: qwe(xt.messages) ?? ft, mediaStripped: !1 };
+        }
+        if (s.abortController.signal.aborted) throw Error(IO);
+        if (ft && s.compactionApiAttemptsLeft?.count === 0)
+          return { response: ft, mediaStripped: !1 };
+        (t(`Compact cache sharing: no text in response, falling back. Response: ${_(ft)}`, {
+          level: "warn",
+        }),
+          i("tengu_compact_cache_sharing_fallback", {
+            reason: S("no_text_response"),
+            preCompactTokenCount: h,
+            lastAssistantKind: rfr(ft),
+            assistantTextLength: St?.length ?? 0,
+            forkAssistantMessageCount: Wt,
+            stopReason: de(
+              ft?.isApiErrorMessage && ft.message.stop_reason !== "refusal"
+                ? void 0
+                : (ft?.message.stop_reason ?? void 0),
+            ),
+            assistantErrorKind: de(ft?.error ?? void 0),
+          }));
+      } catch (xt) {
+        if (s.abortController.signal.aborted || iI(xt, IO)) throw Error(IO);
+        (l(xt),
+          i("tengu_compact_cache_sharing_fallback", {
+            reason: S("error"),
+            preCompactTokenCount: h,
+          }));
+      }
+    let ve =
+        !b &&
+        !(s.stickyBetas && fBe(s.stickyBetas, s.options.mainLoopModel)) &&
+        (await iRr(
+          s.options.mainLoopModel,
+          s.options.tools,
+          async () => r.toolPermissionContext,
+          s.options.agentDefinitions.activeAgents,
+          "compact",
+          s.credentials,
+          void 0,
+          Wk(ws()),
+        ))
+          ? gi([RE, pTr, ...s.options.tools.filter((xt) => xt.isMcp)], "name")
+          : [RE],
+      Ee = [...Is(e), n],
+      Me = jve(b ? nfr(Ee) : Ee),
+      xe = b ? ofr(Me) : Me,
+      $e = y.model ?? s.options.mainLoopModel,
+      Ge = s.agentId === void 0;
+    if (U1e($e, s.requestDialog)) {
+      let xt = bye();
+      if (xt === null) {
+        let ft = H2();
+        if (Ge)
+          m(
+            "model_fable_consent",
+            ft ? "compact_no_model_fallback_env" : "compact_no_allowed_fallback",
+          );
+        if (ft)
+          throw Error(
+            "Compaction unavailable: CLAUDE_CODE_NO_MODEL_FALLBACK is set and model substitution is disabled \xB7 unset it to allow the swap",
+          );
+        throw new R(
+          `Compaction unavailable: your model policy only allows ${dS($e)}, which requires usage credits \xB7 /model to set it up`,
+          "Compaction unavailable: model policy only allows Fable, which requires usage credits",
+        );
+      }
+      if (Ge) p("model_fable_consent", "compact_substituted");
+      $e = xt;
+    }
+    let Ye = zve($e, s.options.fallbackModel),
+      it = Sye($e, Ye),
+      at = 0,
+      mt,
+      lt,
+      kt;
+    while (!0) {
+      let xt = mt ?? it[at],
+        ft = XRr(it, at, xt),
+        St = !1,
+        Wt,
+        Gt = lt;
+      lt = void 0;
+      let on = kt;
+      kt = void 0;
+      let Kt = YRr({
+          currentModel: xt,
+          alreadyUsed: mt !== void 0,
+          declined: !1,
+          inCascadeEpisode: !1,
+          cascadeNext: void 0,
+          suppressionAlreadyLogged: !0,
+          requestDialog: s.requestDialog,
+          isMainThread: Ge,
+          consumerLacksDialogCapability: !0,
+          preferenceQuestionPending: !1,
+          serverDefaultFallbacksEnabled: () => !1,
+          selfTargetDefaultFallbacksEnabled: () => !1,
+          sticky: ws(),
+          threadedRequest: !1,
+        }).visibleModel,
+        bn = [];
+      (s.onCompactEvent?.({ type: "stream_mode", mode: "requesting" }),
+        w?.({ type: "response_length", op: "reset" }));
+      try {
+        let Bn = DDt(Ee),
+          rn = Nv(Ee),
+          no = NHt({
+            messages: yA(xe, b ? [] : s.options.tools, void 0, {
+              echoWireToolInputs: rn,
+              echoApiBlockOrder: eT(),
+              thinkingStripPlan: H,
+              advisorStripPlan: q,
+              reminderFold: Bn,
+            }),
+            systemPrompt: Mi([
+              "You are a helpful AI assistant tasked with summarizing conversations.",
+            ]),
+            thinkingConfig: fQe(s),
+            tools: b ? [] : ve,
+            signal: s.abortController.signal,
+            options: {
+              async getToolPermissionContext() {
+                return s.getAppState().toolPermissionContext;
+              },
+              model: xt,
+              withoutToolDescribeHooks: s.options.settingsHooksOff,
+              reminderFold: Bn,
+              echoWireToolInputs: rn,
+              fallbackModel: it[at + 1],
+              accessFallbackModel: ft,
+              refusalFallbackModel: Kt,
+              refusalFallbackModelLane: "visible",
+              fallbackCreditLaneArmed: Kt !== void 0,
+              fallbackCreditCode: Gt?.code,
+              fallbackCreditMintModel: Gt?.mintModel,
+              fallbackCreditMintRequestId: Gt?.mintRequestId,
+              fallbackStampFromModel: on?.fromModel,
+              fallbackStampCategory: on?.category,
+              fallbackStampTrigger: on?.trigger,
+              fallbackStampOriginalRequestId: on?.originalRequestId,
+              toolChoice: void 0,
+              isNonInteractiveSession: s.options.isNonInteractiveSession,
+              hasAppendSystemPrompt: !!s.options.appendSystemPrompt,
+              querySource: "compact",
+              compactionRequestKind: K,
+              apiAttemptsLeft: s.compactionApiAttemptsLeft,
+              agents: s.options.agentDefinitions.activeAgents,
+              mcpTools: [],
+              agentContext: s.agentContext,
+              credentials: s.credentials,
+              storageV5: s.storageV5,
+              stickyBetas: Wk(ws()),
+              proactivityLevel: d8(s),
+              effortValue: Ng(s),
+              effortSetAsideByHold: Uun(s),
+              turnEffort: Yy(s.permissionLayers),
+              refusalFallbackEffort: on?.effort ?? void 0,
+              enablePromptCaching: !1,
+              promptTooLongIsHandled: !0,
+              onRetryStatus: s.onRetryStatus,
+            },
+          })[Symbol.asyncIterator](),
+          ao = await no.next();
+        while (!ao.done) {
+          let dn = ao.value;
+          if (dn.type === "stream_event") {
+            if (dn.event.type === "content_block_start" && dn.event.content_block.type === "text")
+              St = !0;
+            be?.(dn);
+          }
+          if (dn.type === "assistant") bn.push(dn);
+          if (dn.type === "model_fallback_triggered") throw dn.error;
+          if (dn.type === "fallback_request") {
+            Wt = dn;
+            try {
+              await no.return(void 0);
+            } catch (wo) {
+              t(`Compact: refused summarizer stream threw on return: ${d(wo)}`, { level: "warn" });
+            }
+            break;
+          }
+          ao = await no.next();
+        }
+        if (Wt !== void 0) {
+          let dn = Wt.fallbackModel;
+          if (U1e(dn, s.requestDialog)) {
+            let wo = bye(),
+              $n = wo !== null && kTe(it[0], wo);
+            if (wo === null || $n) {
+              if (Ge)
+                m(
+                  "model_fable_consent",
+                  $n
+                    ? "compact_refusal_fallback_shrinks_window"
+                    : "compact_refusal_no_allowed_fallback",
+                );
+              if ($n)
+                throw Error(
+                  "Compaction unavailable: the only model allowed after this refusal has a smaller context window \xB7 retry, or /model to change models",
+                );
+              throw new R(
+                `Compaction unavailable: your model policy only allows ${dS(dn)}, which requires usage credits \xB7 /model to set it up`,
+                "Compaction unavailable: model policy only allows Fable, which requires usage credits",
+              );
+            }
+            if (Ge) p("model_fable_consent", "compact_substituted");
+            dn = wo;
+          }
+          if (
+            ((mt = dn),
+            (lt =
+              Wt.creditCode !== null
+                ? { code: Wt.creditCode, mintModel: xt, mintRequestId: Wt.requestId ?? void 0 }
+                : void 0),
+            (kt = {
+              fromModel: Wt.originalModel,
+              category: Wt.apiRefusalCategory ?? void 0,
+              trigger: Wt.trigger,
+              originalRequestId: Wt.requestId ?? void 0,
+              effort: Wt.refusedEffort.carry,
+            }),
+            i("tengu_refusal_fallback_triggered", {
+              original_model: wt(xt),
+              fallback_model: wt(mt),
+              trigger: c(Wt.trigger),
+              request_id: ye(Wt.requestId),
+              prompt_skipped_reason: c(
+                oXn({
+                  requestDialog: s.requestDialog,
+                  isMainThread: Ge,
+                  silentAttempt: !1,
+                  consumerLacksDialogCapability: !0,
+                }) ?? "no_dialog_host",
+              ),
+              api_refusal_category: Wt.apiRefusalCategory ? c(Khe(Wt.apiRefusalCategory)) : void 0,
+              route_matched: Wt.routeMatched != null ? c(Wt.routeMatched) : void 0,
+              has_api_refusal_explanation: Boolean(Wt.apiRefusalExplanation),
+              credit_minted: Wt.creditCode !== null,
+              ...rpn(Wt.refusedEffort),
+              querySource: S("compact"),
+              queryChainId: ye(s.queryTracking?.chainId) ?? S(""),
+              queryDepth: s.queryTracking?.depth ?? -1,
+            }),
+            t("Compact: refusal fallback triggered, retrying summarization on the fallback model", {
+              level: "warn",
+            }),
+            s.abortController.signal.aborted)
+          )
+            throw Error(IO);
+          continue;
+        }
+        let To = bn.at(-1);
+        if (To) {
+          if (mt !== void 0 && !To.isApiErrorMessage) g("refusal_fallback");
+          return { response: To.isApiErrorMessage ? To : (qwe(bn) ?? To), mediaStripped: !0 };
+        }
+        if (s.abortController.signal.aborted) throw Error(IO);
+        throw (
+          t(`Compact streaming failed. hasStartedStreaming=${St}`, { level: "error" }),
+          i("tengu_compact_failed", {
+            reason: S("no_streaming_response"),
+            preCompactTokenCount: h,
+            hasStartedStreaming: St,
+            promptCacheSharingEnabled: Q,
+          }),
+          Error(C7e)
+        );
+      } catch (Bn) {
+        if (JRr(ft, Bn)) it.push(ft);
+        let rn = it[at + 1];
+        if (rn !== void 0 && U1e(rn, s.requestDialog)) {
+          let cn = bye() ?? void 0;
+          if (((rn = cn !== void 0 && !kTe(it[0], cn) ? cn : void 0), rn !== void 0))
+            it[at + 1] = rn;
+        }
+        if (Bn instanceof jH && rn !== void 0) {
+          if (H2()) ign();
+          (g("model_fallback"),
+            i("tengu_model_fallback_triggered", {
+              original_model: wt(Bn.originalModel),
+              fallback_model: wt(rn),
+              chain_index: at + 1,
+              query_source: S("compact"),
+              reason: c(Bn.reason),
+              entrypoint: S("cli"),
+              queryChainId: ye(s.queryTracking?.chainId) ?? S(""),
+              queryDepth: s.queryTracking?.depth ?? -1,
+            }),
+            t(
+              `Compact: model fallback triggered (${Bn.reason}), retrying summarization on the fallback model`,
+              { level: "warn" },
+            ),
+            at++,
+            (mt = void 0));
+          continue;
+        }
+        if (Bn instanceof jH && Bn.reason === "model_blocked")
+          throw new a9(VRr(Bn, qo(Bn.originalModel)));
+        throw Bn;
+      }
+    }
+  } finally {
+    Se();
+  }
+}

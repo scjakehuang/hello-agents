@@ -1,0 +1,43 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 228662453; external dependencies are not included.
+async function _fr(e, n, r, s, h = 0, y, b = !1) {
+  if (YDt(s)) return !1;
+  if (fje(s)) return !1;
+  if (nBn(s, n, r)) return !1;
+  if (!ff()) return !1;
+  if (tN() && !ame(n, r) && !b) return !1;
+  let w = F1e(e),
+    H = qf(e, n.bytesPerToken) - h + w,
+    q = lme(H, n, r);
+  if (
+    (t(
+      `autocompact: tokens=${H} level=${q.level} effectiveWindow=${VX(n, r)}${w > 0 ? ` serverCleared=${w}` : ""}`,
+    ),
+    q.level === "compact" && a.CLAUDE_CODE_REMOTE && $Ir(s))
+  ) {
+    let K = O5t(n, r);
+    if (H < K) {
+      let Q = MHs();
+      if (
+        (i("tengu_fork_early_compact", {
+          skipped: Q,
+          querySource: us(s),
+          tokenCount: H,
+          overrideThreshold: Az(n, r),
+          thresholdWithoutOverride: K,
+          thresholdSource: c(Eae(n, r)),
+          queryChainId: ye(y?.chainId),
+          queryDepth: y?.depth,
+        }),
+        Q)
+      )
+        return (
+          t(
+            `autocompact: not compacting the ${s} fork: it ignores CLAUDE_AUTOCOMPACT_PCT_OVERRIDE, and ${H} tokens is under the threshold without it (${K})`,
+          ),
+          !1
+        );
+    }
+  }
+  return q.level === "compact" || q.level === "blocked";
+}

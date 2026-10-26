@@ -1,0 +1,1 @@
+function Kwe(e){return qwe(e)?.message.content.find((s)=>s.type==="text")?.text.trim()||null}

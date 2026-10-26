@@ -1,0 +1,1 @@
+function ffr(e,n){if(Qc(e)<=n)return e;let r=n*4-fBn.length;return e.slice(0,r)+fBn}

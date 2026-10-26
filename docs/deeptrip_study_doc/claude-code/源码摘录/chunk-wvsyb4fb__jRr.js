@@ -1,0 +1,129 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 228523017; external dependencies are not included.
+async function jRr(e) {
+  let {
+      compactResult: n,
+      preCompactMessages: r,
+      startTime: s,
+      cacheSafeParams: h,
+      querySource: y,
+      trigger: b,
+      thresholdSource: w,
+      thresholdWindow: H,
+      precomputed: q,
+      manualPrecomputeReuse: K,
+      precomputeTelemetry: Q,
+      mainChainTailAtStart: Se,
+      cacheCold: be,
+    } = e,
+    { toolUseContext: we } = h,
+    ve = e.compactionKind ?? bXe(b, w),
+    Ee = Sre(y),
+    Me = e.preCompactTokens ?? qf(r),
+    xe = y5n(we.readFileState);
+  if ((we.readFileState.clear(), JK(we.memorySelector), Tun(we.agentId), Ee))
+    (await yrn(we.storageV5), fVt(Og([...n.summaryMessages, ...e.messagesToPreserve])));
+  let $e = r.at(-1)?.uuid,
+    Ge = d2(b, Me, $e);
+  if (((Ge.compactMetadata.durationMs = Math.round(performance.now() - s)), q))
+    Ge.compactMetadata.precomputed = !0;
+  let Ye = n9(r, { surfaced: (h.toolUseContext.stickyBetas ?? ws()).surfacedOnWire });
+  if (Ye.size > 0) Ge.compactMetadata.preCompactDiscoveredTools = [...Ye].sort();
+  NJ(Ge, we.agentId, we.getAppState());
+  let it = e.messagesToPreserve.map(ZIe),
+    at = vXe(it, we),
+    mt = iT(y, we.agentId),
+    lt = await Yve(xe, we, it, "reactive_compact", r, mt, ve === "reactive").catch((Bn) =>
+      Our(Bn, we, r, it, mt),
+    );
+  we.onCompactEvent?.({
+    type: "compact_progress",
+    event: { type: "hooks_start", hookType: "post_compact" },
+  });
+  let kt = await $Ht(
+      we.session,
+      { trigger: b, compactSummary: n.summaryText },
+      we,
+      we.abortController.signal,
+    ),
+    xt = wXe(Ge, n.summaryMessages.at(-1).uuid, it, r),
+    ft = it.length > 0 ? n.summaryMessages.map(Kln) : n.summaryMessages,
+    St = {
+      boundaryMarker: xt,
+      summaryMessages: ft,
+      messagesToKeep: it,
+      attachments: at.marker ? [at.marker, ...lt.attachments] : lt.attachments,
+      hookResults: lt.hookResults,
+      userDisplayMessage: kt.userDisplayMessage,
+      preCompactTokenCount: Me,
+      ...(!q && { compactionUsage: n.totalUsage }),
+    },
+    Wt = Og(H1(St));
+  if (((xt.compactMetadata.postTokens = Wt), tK(xt, r), Ee)) INe(Wt);
+  let Gt = (() => {
+      try {
+        return ZSe(JSe(r));
+      } catch (Bn) {
+        return (l(Bn), {});
+      }
+    })(),
+    on = n.totalUsage,
+    Kt = on.input_tokens + on.cache_creation_input_tokens + on.cache_read_input_tokens,
+    bn = Xy(we.options.mainLoopModel, Ng(we), Yy(we.permissionLayers));
+  if (n.splitKind !== "round" && (b === "auto" || n.headTruncations > 0))
+    p("compact_reactive", "compact_reactive_summarized_all");
+  else g("compact_reactive");
+  if (Ee) SJ("compact");
+  if (
+    (i("tengu_reactive_compact_succeeded", {
+      ...(bn && { effort_level: c(bn) }),
+      querySource: y === void 0 ? void 0 : us(y),
+      attempts: n.attempt,
+      groupsPreserved: n.groupsPreserved,
+      totalGroups: n.totalGroups,
+      splitKind: c(n.splitKind),
+      headTruncations: n.headTruncations,
+      preservedUuidCount: xt.compactMetadata.preservedMessages?.uuids.length ?? 0,
+      preservedMessageCount: it.length,
+      keptThinkingBlockCount: at.thinkingBlockCount,
+      keptThinkingStripped: at.marker !== void 0,
+      keptThinkingStripDecidedBy: de(at.decidedBy),
+      forkAssistantMessageCount: n.forkAssistantMessageCount,
+      summaryPromptArm: de(n.promptArm),
+      summaryScopeWarned: n.scopeWarned,
+      trigger: c(b),
+      thresholdSource: de(w),
+      autoCompactWindow: H?.window,
+      autoCompactWindowOrigin: de(H?.origin),
+      preCompactTokens: Me,
+      postCompactTokens: Wt,
+      restoredAttachmentCount: lt.attachments.length + lt.hookResults.length,
+      durationMs: Math.round(performance.now() - s),
+      userWaitMs: Math.round(performance.now() - s),
+      precomputed: q,
+      manualPrecomputeReuse: de(K),
+      precomputeBorrowed: Q?.borrowed,
+      precomputeStatusAtPTL: de(Q?.statusAtPTL),
+      precomputeLeadMs: Q ? Math.round(Q.leadMs) : void 0,
+      precomputeTotalMs: Q ? Math.round(Q.totalMs) : void 0,
+      messagesSincePrecompute: q ? it.length - n.messagesToPreserve.length : void 0,
+      messagesSinceTokens: Q?.messagesSinceTokens,
+      precomputeRehydrated: Q?.rehydrated,
+      armTrigger: de(Q?.armTrigger),
+      precomputeHeadReordered: Q?.headReordered,
+      precomputeDisplayOnlyMessagesLeftOut: Q?.displayOnlyLeftOutCount,
+      precomputeEarlyTailMessages: Q?.earlyTailCount,
+      compactionInputTokens: on.input_tokens,
+      compactionOutputTokens: on.output_tokens,
+      compactionCacheReadTokens: on.cache_read_input_tokens,
+      compactionCacheCreationTokens: on.cache_creation_input_tokens,
+      compactionTotalTokens: Kt + on.output_tokens,
+      cacheHitRate: Kt > 0 ? on.cache_read_input_tokens / Kt : 0,
+      cacheCold: be,
+      ...Gt,
+    }),
+    iT(y, we.agentId))
+  )
+    (Qwn(ve), S9(Se));
+  return { ok: !0, result: St };
+}

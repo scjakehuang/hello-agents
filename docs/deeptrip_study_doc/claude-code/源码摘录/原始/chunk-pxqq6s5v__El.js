@@ -1,0 +1,1 @@
+function El(e){let n=[];for(let s of e)if(s.type==="assistant"&&Array.isArray(s.message.content)){for(let r of s.message.content)if(kd(r)&&r.type==="tool_use"&&Et.has(r.name))n.push(r.id)}return n}

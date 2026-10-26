@@ -1,0 +1,1 @@
+function Og(e,n){let r=0;for(let s of e)r+=VLo(s,n);return r}

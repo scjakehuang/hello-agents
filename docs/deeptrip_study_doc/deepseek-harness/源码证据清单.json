@@ -1,0 +1,237 @@
+{
+  "analysisDate": "2026-10-22",
+  "repository": "https://github.com/deepseek-ai/deepseek-harness",
+  "localSource": "/Users/tcuser/Documents/ideaproject/deepseek-harness",
+  "branch": "master",
+  "commit": "687f282e8625c6b8d11ff58211a90524be2e4317",
+  "version": "0.2.1-rc.2",
+  "shallowClone": true,
+  "verification": {
+    "kind": "static source inspection",
+    "referenceTargetsChecked": 31,
+    "sourceWorktreeClean": true,
+    "dependenciesInstalled": false,
+    "buildExecuted": false,
+    "testsExecuted": false,
+    "liveModelInvoked": false
+  },
+  "sources": [
+    {
+      "id": "S01",
+      "path": "apps/cli/src/bin.ts",
+      "line": 26,
+      "sourceLine": "export async function runCli(options: RunCliOptions = {}): Promise<void> {",
+      "sha256": "7081b6503a635eb6c6d9c3e4619e740afe157252b246aa17acbf1a1ceec54c88"
+    },
+    {
+      "id": "S02",
+      "path": "apps/cli/src/profile-boot.ts",
+      "line": 271,
+      "sourceLine": "export async function runProfile(options: RunProfileOptions): Promise<{ ctx: Context; shutdown: ProcessShutdown }> {",
+      "sha256": "77a244c7dce0dacdd1f33dc7fc2cb220983706306e3fe5de15bb055aca1d9da2"
+    },
+    {
+      "id": "S03",
+      "path": "packages/boot/app-boot/src/index.ts",
+      "line": 1200,
+      "sourceLine": "export async function boot(",
+      "sha256": "d8c1d397be0560cfbb9692d1fb0def081239625d464b48fd245f5b1baa34ac72"
+    },
+    {
+      "id": "S04",
+      "path": "packages/boot/app-boot/src/profile-context.ts",
+      "line": 74,
+      "sourceLine": "export function readProfilePatches(binName: string, context: ProfileContext, initialProfile?: Profile): PatchOptions[] {",
+      "sha256": "67b749c28496e903d00fb843b772703b6b9bb2b5faf8b8838d8d982ebd7e89b1"
+    },
+    {
+      "id": "S05",
+      "path": "packages/bundle/base/cordis.patch.yml",
+      "line": 1,
+      "sourceLine": "# The dsh-base bundle patch: the shared core of each base-backed profile, applied as",
+      "sha256": "a2cc57868a4d016609801e28781262515483dde29b41c2742d9a3b27a6f52f77"
+    },
+    {
+      "id": "S06",
+      "path": "packages/core/agent/src/index.ts",
+      "line": 393,
+      "sourceLine": "  async create(options: CreateAgentOptions): Promise<AgentHandle> {",
+      "sha256": "218b30227cdc55d4c193112495a852507d12070028572ac95e6f9d1f954d1077"
+    },
+    {
+      "id": "S07",
+      "path": "packages/core/agent-loop/src/index.ts",
+      "line": 750,
+      "sourceLine": "  async createAgent(ownerCtx: Context, options: CreateAgentOptions): Promise<AgentHandle> {",
+      "sha256": "3ea0262656c8ddcaa3be315c150bdc2af09371031c3c471d4ded511e21c6e86b"
+    },
+    {
+      "id": "S08",
+      "path": "packages/core/agent-loop/src/agent.ts",
+      "line": 122,
+      "sourceLine": "  constructor(",
+      "sha256": "4add12f5c22bb1b8cf1dbc239c9b09fa3351feff2c936cb2b8900036468bd01b"
+    },
+    {
+      "id": "S09",
+      "path": "packages/api/session-controller/src/index.ts",
+      "line": 461,
+      "sourceLine": "  @Remote('prompt')",
+      "sha256": "a85ee64c5e5cb20bfa40d3a7f07cdd2f490c82268f08cfc53df6fd72458574c4"
+    },
+    {
+      "id": "S10",
+      "path": "packages/api/session-controller/src/commands.ts",
+      "line": 319,
+      "sourceLine": "  async prompt(request: SessionPromptRequest, source: MessageSource): Promise<SessionPromptValue> {",
+      "sha256": "b1d3f6cc7b42d850a391d988a8d5dc2bee2e5f10f35ae4e6c1ae88e836c165b1"
+    },
+    {
+      "id": "S11",
+      "path": "packages/bundle/headless/src/index.ts",
+      "line": 311,
+      "sourceLine": "async function run(ctx: Context, config: Config, io: HeadlessIo): Promise<void> {",
+      "sha256": "95c0f91a38f038aaa600c7e09cbab545d59549336d2635e5fa7a8b1f800ec62a"
+    },
+    {
+      "id": "S12",
+      "path": "packages/core/agent-loop/src/agent.ts",
+      "line": 154,
+      "sourceLine": "  send(message: UserMessage, target: InboxTarget, wakeup: boolean): void {",
+      "sha256": "4add12f5c22bb1b8cf1dbc239c9b09fa3351feff2c936cb2b8900036468bd01b"
+    },
+    {
+      "id": "S13",
+      "path": "packages/core/agent-loop/src/agent.ts",
+      "line": 298,
+      "sourceLine": "  private async turn(): Promise<boolean> {",
+      "sha256": "4add12f5c22bb1b8cf1dbc239c9b09fa3351feff2c936cb2b8900036468bd01b"
+    },
+    {
+      "id": "S14",
+      "path": "packages/core/agent-loop/src/agent.ts",
+      "line": 400,
+      "sourceLine": "  private async step(decision: Extract<PreparedStep, { kind: 'enter' }>): Promise<StepEndReason | null> {",
+      "sha256": "4add12f5c22bb1b8cf1dbc239c9b09fa3351feff2c936cb2b8900036468bd01b"
+    },
+    {
+      "id": "S15",
+      "path": "packages/core/system-prompt/src/index.ts",
+      "line": 614,
+      "sourceLine": "  async assemble(context: AssembleContext = {}): Promise<PromptAssembly> {",
+      "sha256": "9e254cddc9ef00072f9205950405ba8650bc43c8809fba6162da93253efc7f71"
+    },
+    {
+      "id": "S16",
+      "path": "packages/core/agent-loop/src/agent.ts",
+      "line": 564,
+      "sourceLine": "  private async prepareRequest(",
+      "sha256": "4add12f5c22bb1b8cf1dbc239c9b09fa3351feff2c936cb2b8900036468bd01b"
+    },
+    {
+      "id": "S17",
+      "path": "packages/core/session/src/index.ts",
+      "line": 984,
+      "sourceLine": "  deriveMessages(): Message[] {",
+      "sha256": "c1f08f7dcf4075eeebb13e6ea06b3f348bfeb85b8a5d4e4bfd1c3b93c1959332"
+    },
+    {
+      "id": "S18",
+      "path": "packages/llm/llm/src/index.ts",
+      "line": 956,
+      "sourceLine": "  async prepareCall(",
+      "sha256": "12863e4b6419825e2600a63110379c5c6bbab18b3a2365ca45645baca5f96db2"
+    },
+    {
+      "id": "S19",
+      "path": "packages/llm/llm/src/index.ts",
+      "line": 1170,
+      "sourceLine": "  private streamWithRegistration(",
+      "sha256": "12863e4b6419825e2600a63110379c5c6bbab18b3a2365ca45645baca5f96db2"
+    },
+    {
+      "id": "S20",
+      "path": "packages/llm/llm-deepseek/src/adapter.ts",
+      "line": 91,
+      "sourceLine": "  private async * request(",
+      "sha256": "40aa0cc4730d9dc31c66e1e62e84dcaba787b4f6fa956fd6c2185f799bb538c7"
+    },
+    {
+      "id": "S21",
+      "path": "packages/llm/llm-deepseek/src/serialize.ts",
+      "line": 57,
+      "sourceLine": "export function serialize(",
+      "sha256": "2a9f9ae77bde951bf9dec21ceec36d87dbeb74e4a9d3f784496f19b55ccbe0a1"
+    },
+    {
+      "id": "S22",
+      "path": "packages/llm/llm-deepseek/src/translate.ts",
+      "line": 104,
+      "sourceLine": "export async function* translate(events: AsyncIterable<Record<string, unknown>>, model: string): AsyncGenerator<StreamChunk> {",
+      "sha256": "254f4b8fe292dadc5c24df3375b01920f5e5b345be09eae4290e91e9e810c1ba"
+    },
+    {
+      "id": "S23",
+      "path": "packages/core/agent-loop/src/tool-calls.ts",
+      "line": 60,
+      "sourceLine": "export async function executeToolCalls(",
+      "sha256": "5c7e8d8ff0028b436efdd13e5dffa4801d2311c211c3af039e7dab705f87b303"
+    },
+    {
+      "id": "S24",
+      "path": "packages/core/tools/src/index.ts",
+      "line": 1501,
+      "sourceLine": "  private async prepareExecution<T>(",
+      "sha256": "398bcdeb221e450d088510830b77d99a513e65ab31e40ade71688a19cdf5e6aa"
+    },
+    {
+      "id": "S25",
+      "path": "packages/core/tools/src/index.ts",
+      "line": 1572,
+      "sourceLine": "  private async dispatchToolBody(exec: MutableToolRunContext): Promise<ToolExecutionResult> {",
+      "sha256": "398bcdeb221e450d088510830b77d99a513e65ab31e40ade71688a19cdf5e6aa"
+    },
+    {
+      "id": "S26",
+      "path": "packages/core/tools/src/schema.ts",
+      "line": 579,
+      "sourceLine": "  const validate = (args: unknown): string[] => validateJsonSchemaValue(parameters, args, '')",
+      "sha256": "096f679e38626cc52536b8ecb9eef4c551c1a8a095c8e84f7a3b6156ee533653"
+    },
+    {
+      "id": "S27",
+      "path": "packages/shell/tool-bash/src/index.ts",
+      "line": 478,
+      "sourceLine": "      async execute(args: BashToolArgs, exec) {",
+      "sha256": "de24abe9436d4ee4c9d9773538da58621d1d028abac78a53ad3b9e47a5fca7fd"
+    },
+    {
+      "id": "S28",
+      "path": "packages/shell/bash-local/src/index.ts",
+      "line": 259,
+      "sourceLine": "        running = this.ctx.subprocess.spawn(this.spawnSpec(spec, argv, spec.stdoutMaxBytes, spawnSignal))",
+      "sha256": "03f7d8c0a6162aec6c71c719c937ab8b6b7fa011b7fcdc386e513c4d0aeab353"
+    },
+    {
+      "id": "S29",
+      "path": "packages/core/session/src/index.ts",
+      "line": 798,
+      "sourceLine": "  append<T extends SessionEventType>(",
+      "sha256": "c1f08f7dcf4075eeebb13e6ea06b3f348bfeb85b8a5d4e4bfd1c3b93c1959332"
+    },
+    {
+      "id": "S30",
+      "path": "packages/session/session-persistence-jsonl/src/storage.ts",
+      "line": 535,
+      "sourceLine": "  install(ctx: Context): () => Promise<void> {",
+      "sha256": "57d5fa1d7efd17789d6a223f6aa5e06b79092665bea13f8a23d3bab644d066c3"
+    },
+    {
+      "id": "S31",
+      "path": "packages/llm/llm-retry/src/index.ts",
+      "line": 194,
+      "sourceLine": "  async function recover(",
+      "sha256": "d33553781ed2118aab3b249c159fae550d359627565e4714c9ea599e474b8093"
+    }
+  ]
+}

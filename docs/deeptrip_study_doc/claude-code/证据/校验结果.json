@@ -1,0 +1,8 @@
+{
+  "scope": "static artifact and documentation checks only; target not executed",
+  "binary_sha256": "5b113a7752119470f1da419cb0e608af3361cae25b614216b13022093958fb2a",
+  "excerpt_binary_source_hash_matches": 93,
+  "source_modules_verified": 7,
+  "local_markdown_links_checked": 272,
+  "numeric_examples": "passed"
+}

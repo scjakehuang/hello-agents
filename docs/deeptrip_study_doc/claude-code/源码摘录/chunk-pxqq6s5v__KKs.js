@@ -1,0 +1,31 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 222107812; external dependencies are not included.
+async function KKs(e, n, s) {
+  let { keepSet: r, tokensSaved: h, candidates: y } = JFo(e, s.keepRecent);
+  if (h < E8n) return null;
+  let b = new Set(y.map((R) => R.tool_use_id)),
+    w = new Map();
+  for (let R of y) {
+    let A = R.content ? await s.persist?.(R.content, R.tool_use_id) : null;
+    w.set(R.tool_use_id, A ?? St);
+  }
+  let v = Aun(e, b, w);
+  if (n !== void 0 && es(n) === "main") SJ("tool_result_clear");
+  if (
+    (i("tengu_time_based_microcompact", {
+      toolsCleared: b.size,
+      toolsKept: r.size,
+      keepRecent: s.keepRecent,
+      tokensSaved: h,
+      trigger: S("context_hint"),
+    }),
+    g("compact_micro_keep_recent"),
+    t(
+      `[KEEP-RECENT MC] context_hint trigger, cleared ${b.size} tool results (~${h} tokens), kept last ${r.size}`,
+    ),
+    A1t(),
+    n)
+  )
+    bt(n, s.agentId);
+  return { messages: v, tokensSaved: h, clearedIds: b, clearedContent: w };
+}

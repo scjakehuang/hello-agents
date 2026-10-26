@@ -1,0 +1,1 @@
+function nfr(e){return e.filter((n)=>n.type!=="attachment"||n.attachment.type==="queued_command"||n.attachment.type==="poll_events"||n.attachment.type==="dir_sync_notice"||n.attachment.type==="fork_briefing"||n.attachment.type==="thinking_stripped"||n.attachment.type==="advisor_stripped")}

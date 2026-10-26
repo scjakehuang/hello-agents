@@ -1,0 +1,1 @@
+function H1(e){return[e.boundaryMarker,...e.summaryMessages,...e.replacement??[],...e.messagesToKeep,...e.attachments,...e.hookResults]}

@@ -1,0 +1,14 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 227609603; external dependencies are not included.
+function F1e(e) {
+  for (let n = e.length - 1; n >= 0; n--) {
+    let r = e[n];
+    if (r && ho(r)) return 0;
+    let s = r?.type === "assistant" ? NH(r) : void 0;
+    if (r?.type !== "assistant" || !s) continue;
+    if (r5t(s)) continue;
+    if (!r.message.context_management && (r.message.stop_reason === null || W$r(e, n))) continue;
+    return bKs(r.message.context_management);
+  }
+  return 0;
+}

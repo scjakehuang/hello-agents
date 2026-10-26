@@ -1,0 +1,1 @@
+function Ut(e,t){return t.every((o,r)=>e[r]===o)}

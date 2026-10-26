@@ -1,0 +1,288 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 228514670; external dependencies are not included.
+async function CWn(e) {
+  let {
+      hasAttempted: n,
+      querySource: r,
+      aborted: s,
+      messages: h,
+      cacheSafeParams: y,
+      precomputed: b,
+      precomputeOutcome: w,
+      initialTokenGap: H,
+      thresholdSource: q,
+      thresholdWindow: K,
+      allowLastResort: Q,
+      keepNoRound: Se,
+      spinnerHintText: be,
+      onResponseLength: we,
+    } = e,
+    ve = w?.kind,
+    Ee = w?.kind === "failed" ? w.failure.cause : void 0;
+  if (!mvo({ hasAttempted: n, querySource: r, aborted: s, hasPrecomputedSwap: b !== void 0 }))
+    return { result: null, hookBlocked: !1 };
+  let { toolUseContext: xe } = y,
+    $e = Xy(xe.options.mainLoopModel, Ng(xe), Yy(xe.permissionLayers));
+  (i("tengu_reactive_compact_triggered", {
+    ...($e && { effort_level: c($e) }),
+    querySource: us(r),
+    precomputed: b !== void 0,
+    precomputedKind: de(ve),
+    precomputedFailureCause: de(Ee),
+    armTrigger: de(b?.armTrigger),
+    thresholdSource: de(q),
+    autoCompactWindow: K?.window,
+    autoCompactWindowOrigin: de(K?.origin),
+  }),
+    fnn(ce(xe), "summary"));
+  let Ge = e.userWaitStartedAt ?? performance.now(),
+    Ye = FV(),
+    it,
+    at,
+    mt = !1,
+    lt = !1,
+    kt = async (rn, cn) => {
+      let no =
+        b &&
+        C4r({
+          coverage: b.coverage,
+          kept: b.compactResult.messagesToPreserve,
+          sent: { messages: h, rowUuids: NYe(h) },
+          received: { messages: rn, rowUuids: NYe(rn) },
+          instructions: cn,
+        });
+      if (no?.kind === "refuse") {
+        if ((b?.reportRefused(no.reason), e.precomputedOnly))
+          return ((lt = !0), { skip: "the ready summary no longer fits the conversation" });
+      }
+      if (b !== void 0 && no?.kind === "reuse") {
+        let dn = no.tail;
+        if (
+          ((it = b.preCompactHookDisplay),
+          (mt = !0),
+          xe.onCompactEvent?.({ type: "stream_mode", mode: "requesting" }),
+          we?.({ type: "response_length", op: "reset" }),
+          xe.onCompactEvent?.({
+            type: "compact_progress",
+            event: { type: "compact_start", hintText: be },
+          }),
+          xe.onCompactEvent?.({ type: "sdk_status", status: "compacting" }),
+          b.replacement)
+        ) {
+          let $n = [...b.compactResult.messagesToPreserve, ...dn];
+          return {
+            messages: $n,
+            tokensBefore: qf(h),
+            record: { kind: "replacement", messages: $n },
+          };
+        }
+        let wo = await jRr({
+          compactResult: b.compactResult,
+          messagesToPreserve: [...b.compactResult.messagesToPreserve, ...dn],
+          preCompactMessages: rn,
+          preCompactTokens: qf(h),
+          startTime: Ge,
+          cacheSafeParams: y,
+          querySource: r,
+          trigger: "auto",
+          thresholdSource: q,
+          thresholdWindow: K,
+          precomputed: !0,
+          precomputeTelemetry: {
+            statusAtPTL: b.statusAtPTL,
+            leadMs: b.leadMs,
+            totalMs: b.totalMs,
+            borrowed: b.borrowed,
+            messagesSinceTokens: Og(dn),
+            rehydrated: b.rehydrated,
+            armTrigger: b.armTrigger,
+            headReordered: no.headReordered,
+            displayOnlyLeftOutCount: no.displayOnlyLeftOutCount,
+            earlyTailCount: no.earlyTailCount,
+          },
+          mainChainTailAtStart: Ye,
+        });
+        return xt(wo);
+      }
+      (xe.onCompactEvent?.({
+        type: "compact_progress",
+        event: { type: "hooks_start", hookType: "pre_compact" },
+      }),
+        xe.onCompactEvent?.({ type: "sdk_status", status: "compacting" }));
+      let ao = await nOe(
+        xe.session,
+        { trigger: "auto", customInstructions: cn ?? null },
+        xe,
+        xe.abortController.signal,
+      ).catch((dn) => (l(dn), {}));
+      if (ao.blockedBy)
+        return (
+          t(`Reactive compact blocked by PreCompact hook: ${ao.blockedBy}`),
+          { skip: `${_W}: ${ao.blockedBy}` }
+        );
+      ((it = ao.userDisplayMessage),
+        (mt = !0),
+        xe.onCompactEvent?.({ type: "stream_mode", mode: "requesting" }),
+        we?.({ type: "response_length", op: "reset" }),
+        xe.onCompactEvent?.({
+          type: "compact_progress",
+          event: { type: "compact_start", hintText: be },
+        }));
+      let To = await gvo(rn, y, {
+        customInstructions: ypt(cn, ao.newCustomInstructions),
+        userWaitStartedAt: Ge,
+        querySource: r,
+        initialTokenGap: H,
+        precomputedKind: no?.kind === "refuse" ? "none" : ve,
+        precomputedFailureCause: Ee,
+        thresholdSource: q,
+        thresholdWindow: K,
+        allowLastResort: Q,
+        keepNoRound: Se,
+        onResponseLength: we,
+      });
+      return xt(To);
+    },
+    xt = (rn) => {
+      if (!rn.ok)
+        throw (
+          (at = { reason: rn.reason, detail: rn.detail }),
+          Error("reactive compaction did not settle ok")
+        );
+      let cn = rn.result.boundaryMarker,
+        no = ho(cn) ? cn.compactMetadata : void 0;
+      return {
+        messages: H1(rn.result),
+        tokensBefore: no?.preTokens,
+        tokensAfter: no?.postTokens,
+        usage: JSo(rn.result.compactionUsage),
+        record: { kind: "compacted", result: rn.result },
+      };
+    },
+    ft = await XSo({
+      trigger: "auto",
+      instructions: void 0,
+      messages: h,
+      agentId: xe.agentId,
+      isIsolated: Fs(xe.agentContext) || xe.options.settingsHooksOff === !0,
+      origin: xe.hookOrigin,
+      signal: xe.abortController.signal,
+      compact: kt,
+    }).catch((rn) => {
+      if (at !== void 0) return;
+      let cn = d(rn);
+      if (ste(cn)) t(`Reactive compact API call failed: ${cn}`, { level: "error" });
+      else l(rn);
+      at = { reason: "error", detail: cn };
+      return;
+    });
+  if (mt)
+    (xe.onCompactEvent?.({ type: "stream_mode", mode: "requesting" }),
+      we?.({ type: "response_length", op: "reset" }));
+  xe.onCompactEvent?.({ type: "compact_progress", event: { type: "compact_end" } });
+  let St = qf(h);
+  if (ft === void 0) {
+    let rn = at ?? { reason: "error" },
+      cn = rn.reason === "error" ? (rn.detail ?? rn.reason) : rn.reason;
+    return (
+      RGe({
+        trigger: "auto",
+        success: !1,
+        durationMs: performance.now() - Ge,
+        preTokens: St,
+        error: cn,
+      }),
+      xe.onCompactEvent?.({
+        type: "sdk_status",
+        status: null,
+        metadata: { compactResult: "failed", compactError: cn },
+      }),
+      { result: null, hookBlocked: !1, failure: { reason: rn.reason, detail: rn.detail } }
+    );
+  }
+  if (ft.kind === "skipped" && lt) return { result: null, hookBlocked: !1 };
+  if (ft.kind === "skipped") {
+    if (
+      (t(`Reactive compact skipped: ${ft.reason}`),
+      Eai(xe.session.precompute, xe.agentId, h),
+      !ft.reason.startsWith(_W))
+    )
+      e.onNotification?.({
+        key: "compaction-skipped",
+        text: `not compacted \xB7 ${ft.reason}`,
+        priority: "immediate",
+        color: "warning",
+      });
+    return (
+      xe.onCompactEvent?.({ type: "sdk_status", status: null }),
+      { result: null, hookBlocked: !0 }
+    );
+  }
+  let { record: Wt } = ft,
+    Gt =
+      ft.kind === "replaced"
+        ? ft.messages
+        : ft.record.kind === "replacement"
+          ? GCr(ft.record.messages)
+          : void 0,
+    on;
+  try {
+    on = {
+      result:
+        Gt === void 0 && Wt?.kind === "compacted"
+          ? Wt.result
+          : await hvo({
+              replacement: Gt ?? [],
+              preCompactMessages: h,
+              cacheSafeParams: y,
+              querySource: r,
+              trigger: "auto",
+              startTime: Ge,
+              coreBoundary: Wt?.kind === "compacted" ? Wt.result.boundaryMarker : void 0,
+              compactionKind: bXe("auto", q),
+              precomputed: Wt?.kind === "replacement",
+            }),
+    };
+  } catch (rn) {
+    l(rn);
+    let cn = d(rn);
+    return (
+      RGe({
+        trigger: "auto",
+        success: !1,
+        durationMs: performance.now() - Ge,
+        preTokens: St,
+        error: cn,
+      }),
+      xe.onCompactEvent?.({
+        type: "sdk_status",
+        status: null,
+        metadata: { compactResult: "failed", compactError: cn },
+      }),
+      { result: null, hookBlocked: !1, failure: { reason: "error", detail: cn } }
+    );
+  }
+  let Kt = { userDisplayMessage: it },
+    bn = on.result.boundaryMarker;
+  if (
+    (RGe({
+      trigger: "auto",
+      success: !0,
+      durationMs: performance.now() - Ge,
+      preTokens: St,
+      postTokens: ho(bn) ? bn.compactMetadata.postTokens : void 0,
+    }),
+    xe.onCompactEvent?.({
+      type: "sdk_status",
+      status: null,
+      metadata: { compactResult: "success" },
+    }),
+    dve(xe.session, r, xe.setAppState, xe.agentId, y.stickyBetas, xe.storageV5),
+    Sre(r))
+  )
+    A1t();
+  let Bn =
+    [Kt.userDisplayMessage, on.result.userDisplayMessage].filter(Boolean).join(`
+`) || void 0;
+  return { result: { ...on.result, userDisplayMessage: Bn }, hookBlocked: !1 };
+}

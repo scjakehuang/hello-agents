@@ -1,0 +1,1 @@
+function tdn(e){if(e.some(Eur))return!0;let n=e.filter((r)=>r.type==="user"&&!r.isMeta&&r.isVirtual!==!0&&!VM(r));return n.length>0&&Og(n)>=Rur}

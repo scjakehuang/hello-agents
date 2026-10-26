@@ -1,0 +1,32 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 228656404; external dependencies are not included.
+function afr(e, n = [], r = []) {
+  let s = KEn(e);
+  if (s.size === 0) return null;
+  let h = 0,
+    y = [],
+    b = Array.from(s.entries()).sort(([, w], [, H]) => H.invokedAt - w.invokedAt);
+  for (let [w, H] of b) {
+    if (!H.content) continue;
+    let q = e9t(r, H.skillName, H.content);
+    if (H.servedByMcp && q === void 0) continue;
+    let K = h0t(n, H.content);
+    if (K === "attachment") continue;
+    let Q = K === "body",
+      Se = ffr(H.content, Jcr),
+      be = Qc(Se);
+    if (h + be > hXe) {
+      if (!Q) A5r(w, "");
+      continue;
+    }
+    if (((h += be), !Q && Se !== H.content)) A5r(w, Se);
+    y.push({
+      name: H.skillName,
+      path: H.skillPath,
+      content: Se,
+      ...(q !== void 0 && { mcpSkill: q }),
+    });
+  }
+  if (y.length === 0) return null;
+  return tn({ type: "invoked_skills", skills: y });
+}

@@ -1,0 +1,1 @@
+function lTr(e){let n=Z4o(e);return{action:n>=3?"trip":"proceed",consecutiveRapidRefills:n}}

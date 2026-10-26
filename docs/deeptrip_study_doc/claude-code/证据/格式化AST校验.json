@@ -1,0 +1,11 @@
+{
+  "scope": "parsed as inert data; raw and formatted AST structure compared ignoring locations, comments and raw literal spelling",
+  "checked": 93,
+  "passed": true,
+  "case_collision_symbols": [
+    "qwe",
+    "jln",
+    "Qwe",
+    "Jln"
+  ]
+}

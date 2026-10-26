@@ -1,0 +1,1 @@
+function Qwe(e){return Gln.test(e.replace(cXe,""))}

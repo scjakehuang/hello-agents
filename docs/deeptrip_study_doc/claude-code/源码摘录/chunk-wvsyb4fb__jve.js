@@ -1,0 +1,32 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 228627333; external dependencies are not included.
+function jve(e) {
+  return e.map((n) => {
+    if (n.type === "attachment") {
+      let y = tfr(n.attachment);
+      return y === n.attachment ? n : Rbe(n, y);
+    }
+    if (n.type !== "user") return n;
+    let r = n.message.content;
+    if (!Array.isArray(r)) return n;
+    let s = !1,
+      h = r.flatMap((y) => {
+        if (!kd(y)) return [y];
+        if (y.type === "image") return ((s = !0), [{ type: "text", text: "[image]" }]);
+        if (y.type === "document") return ((s = !0), [{ type: "text", text: "[document]" }]);
+        if (y.type === "tool_result" && Array.isArray(y.content)) {
+          let b = !1,
+            w = y.content.map((H) => {
+              if (!kd(H)) return H;
+              if (H.type === "image") return ((b = !0), { type: "text", text: "[image]" });
+              if (H.type === "document") return ((b = !0), { type: "text", text: "[document]" });
+              return H;
+            });
+          if (b) return ((s = !0), [{ ...y, content: w }]);
+        }
+        return [y];
+      });
+    if (!s) return n;
+    return { ...n, message: { ...n.message, content: h } };
+  });
+}

@@ -1,0 +1,1 @@
+function Qc(e,n=4){if(typeof e!=="string")return 0;return Math.round(e.length/n)}

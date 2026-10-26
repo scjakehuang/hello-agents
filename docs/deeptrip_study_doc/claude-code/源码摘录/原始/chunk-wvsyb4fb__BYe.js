@@ -1,0 +1,1 @@
+function BYe(e,n){return Math.min(e-Math.round(e*n.precomputeBufferFraction),QQ(e,n))}

@@ -1,0 +1,136 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 228504604; external dependencies are not included.
+async function vur(e, n, r, s, h, y, b, w, H, q, K, Q) {
+  let Se = Zwe(),
+    be = Vve(n.toolUseContext),
+    we = Xwe(r, Se, be !== void 0),
+    ve = Pe({ content: we });
+  Q?.({ type: "response_length", op: "reset" });
+  let Ee;
+  try {
+    Ee = await HR({
+      promptMessages: [ve],
+      cacheSafeParams: { ...n, forkContextMessages: s ? jve(e) : e },
+      canUseTool: SXe(),
+      querySource: "compact",
+      forkLabel: "reactive-compact",
+      maxTurns: 1,
+      compactionRequestKind: h,
+      apiAttemptsLeft: n.toolUseContext.compactionApiAttemptsLeft,
+      thinkingStripPlan: y,
+      advisorStripPlan: b,
+      fallbackModel: zve(
+        n.model ?? n.toolUseContext.options.mainLoopModel,
+        n.toolUseContext.options.fallbackModel,
+      ),
+      skipTranscript: !0,
+      skipCacheWrite: !0,
+      skipMessageCacheMarkers: H,
+      onStreamDelta: Jwe(Q, n.toolUseContext.onCompactEvent),
+      overrides: { onRetryStatus: n.toolUseContext.onRetryStatus },
+    });
+  } catch (Ge) {
+    let Ye = d(Ge);
+    if (ste(Ye)) t(`Reactive compact API call failed: ${Ye}`, { level: "error" });
+    else l(Ge);
+    return {
+      ok: !1,
+      reason: "error",
+      detail: Ye,
+      errorKind: "thrown",
+      status: void 0,
+      isTimeout: !1,
+    };
+  }
+  if (n.toolUseContext.abortController.signal.aborted) return { ok: !1, reason: "aborted" };
+  let Me = ay(Ee.messages);
+  if (!Me)
+    return (
+      l(
+        Error(
+          `Reactive compact: no assistant message in summarization response (${Ee.messages.length} messages, types: ${Ee.messages.map((Ge) => Ge.type).join(", ")})`,
+        ),
+      ),
+      {
+        ok: !1,
+        reason: "error",
+        detail: "no assistant message in summarization response",
+        errorKind: "no_assistant_message",
+        status: void 0,
+        isTimeout: !1,
+      }
+    );
+  if (dme(Me)) return { ok: !1, reason: "prompt_too_long", tokenGap: Ien(Me) };
+  if (F3t(Me)) {
+    let Ge = Og(e) - vye;
+    return {
+      ok: !1,
+      reason: "prompt_too_long",
+      tokenGap: Ge > 0 ? Ge : void 0,
+      viaCreditsBoundary: !0,
+    };
+  }
+  if (MSe(Me)) return { ok: !1, reason: "media_too_large" };
+  if (Me.isApiErrorMessage) {
+    let Ge = eN(Me) ?? "API error";
+    return (
+      t(`Reactive compact: summarization returned API error: ${Ge}`, { level: "error" }),
+      {
+        ok: !1,
+        reason: "error",
+        detail: Ge,
+        errorKind: Me.error ?? "unknown",
+        status: Me.apiErrorStatus,
+        isTimeout: Ge === uut,
+        ...(Me.apiError === "dlp_request_denied" && { isDlpDenied: !0 }),
+      }
+    );
+  }
+  let xe = Kwe(Ee.messages);
+  if (!xe)
+    return (
+      l(Error("Reactive compact: empty summary text in summarization response")),
+      {
+        ok: !1,
+        reason: "error",
+        detail: "summarization produced empty response",
+        errorKind: "empty_summary",
+        status: void 0,
+        isTimeout: !1,
+      }
+    );
+  Kve({
+    path: "reactive",
+    reply: xe,
+    sent: e,
+    outputTokens: Ee.totalUsage.output_tokens,
+    stopReason: Me.message.stop_reason,
+  });
+  let $e;
+  return {
+    ok: !0,
+    summaryText: xe,
+    forkAssistantMessageCount: F(
+      Ee.messages,
+      (Ge) => Ge.type === "assistant" && !Ge.isApiErrorMessage,
+    ),
+    totalUsage: Ee.totalUsage,
+    promptArm: Se,
+    scopeWarned: $e,
+    messages: [
+      Pe({
+        ...QZ(xe, {
+          suppressFollowUpQuestions: !0,
+          promptArm: Se,
+          transcriptPath: be,
+          ...!1,
+          headTruncated: w,
+          foreignArtifactContent: q,
+          toolNamesUsed: K,
+        }),
+        isCompactSummary: !0,
+        isVisibleInTranscriptOnly: !0,
+      }),
+    ].map((Ge) => F3(Ge, e)),
+  };
+}

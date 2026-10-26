@@ -1,0 +1,1 @@
+function xur(e){let n=yXe(e),r=e.findLastIndex((s,h)=>h>=n&&kXe(s));return r===-1?{toSummarize:e,toKeep:[]}:{toSummarize:e.slice(0,r),toKeep:e.slice(r)}}

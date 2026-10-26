@@ -1,0 +1,1 @@
+function PYe(e){let n=e.length-1;while(n>=0){let r=e[n];if(r&&ho(r))return{tokens:0,anchorIndex:n};let s=r?NH(r):void 0;if(r&&s&&!r5t(s)){let h=dSe(r);if(h){let y=n-1;while(y>=0){let b=e[y],w=b?dSe(b):void 0;if(w===h)n=y;else if(w!==void 0)break;y--}}return{tokens:iO(s),anchorIndex:n}}n--}return null}

@@ -1,0 +1,1 @@
+function dbo(e,n){return{compacted:!0,turnId:e,turnCounter:0,consecutiveFailures:0,consecutiveRapidRefills:n}}

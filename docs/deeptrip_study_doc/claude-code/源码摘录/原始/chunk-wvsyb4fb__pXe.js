@@ -1,0 +1,1 @@
+function pXe(e,n){return e!==null&&tdn([...e,...n])?e:null}

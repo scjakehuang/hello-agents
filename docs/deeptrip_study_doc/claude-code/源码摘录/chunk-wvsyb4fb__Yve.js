@@ -1,0 +1,89 @@
+// Claude Code 2.1.307 shipped excerpt. Original symbols; static reading only.
+// Binary file offset 228654012; external dependencies are not included.
+async function Yve(e, n, r, s, h, y, b = !1) {
+  let w = Fs(n.agentContext),
+    H = await sfr(e, n, mXe, r),
+    q = w ? [] : await lfr(n),
+    K = w ? [] : dfr(n),
+    Q = ufr(h, r),
+    Se = n.agentId,
+    be = await ifr(Se, n.storageV5),
+    we = await TXe(n, h),
+    ve = afr(Se, r, h),
+    Ee = uWe(n),
+    Me = Ee === void 0 ? void 0 : Oge(Ee),
+    xe = [],
+    $e = [],
+    Ge = void 0,
+    Ye = void 0;
+  try {
+    ((xe = Rcn(Me, n)), ($e = b ? W1s(Ee, n.options.tools) : []));
+    let Wt = [...xe, ...$e];
+    ((Ge = Wt.length === 0 ? void 0 : Iwt(r, new Set(Wt), n.options)),
+      (Ye = Ge === void 0 ? void 0 : Dwt(r)));
+  } catch (Wt) {
+    (l(Wt), (xe = []), ($e = []), (Ge = void 0), (Ye = void 0));
+  }
+  let it = xe.length === 0 ? Me : Me?.without(new Set(xe)),
+    at = [
+      ...(await FWn(
+        n.options.tools,
+        n.options.mainLoopModel,
+        r,
+        { callSite: s },
+        void 0,
+        void 0,
+        void 0,
+        void 0,
+        it,
+        F7e(Ee, n),
+        void 0,
+        n.options,
+      )),
+      ...(await ETe(n, r)),
+      ...(x7e(n) ? [] : await $Wn(n, r).catch((Wt) => (l(Wt), []))),
+      ...B7e(n.options.mcpClients, n.options.tools, n.options.mainLoopModel, r, it),
+      ...H7e(n, r),
+      ...Cnn(n.options.tools, r),
+      ...Scn(h, r, ld() !== null),
+      ...bcn(h, r),
+      ...iwt(h, r),
+      ...s9t(h, r),
+      ...(ih() && !w ? ((await Oje().remote?.noticeAttachment(n, r, "post_compact")) ?? []) : []),
+    ].map((Wt) => tn(Wt)),
+    mt = [];
+  if (!w) {
+    if (!n.options.settingsHooksOff)
+      (n.onCompactEvent?.({
+        type: "compact_progress",
+        event: { type: "hooks_start", hookType: "session_start" },
+      }),
+        (mt = await hte(n.session, "compact", {
+          model: n.options.mainLoopModel,
+          agentContext: n.agentContext,
+          storageV5: n.storageV5,
+          credentials: n.credentials,
+        })));
+  }
+  let lt = CXe(h, r, n.options.tools, y && s !== "compact_partial"),
+    kt = EXe(n, h, r, y),
+    xt = RXe(h, r, y);
+  if (Ee !== void 0) (j1s(Ee, xe), G1s(Ee, $e));
+  let ft = n.options.announcementWalk,
+    St = [
+      ...H,
+      ...q,
+      ...K,
+      ...Q,
+      ...(be ? [be] : []),
+      ...(we ? [we] : []),
+      ...(ve ? [ve] : []),
+      ...at,
+      ...(lt ? [lt] : []),
+      ...(kt ? [kt] : []),
+      ...(xt ? [xt] : []),
+      ...(Ge ? [tn(Ge)] : []),
+      ...(Ye ? [tn(Ye)] : []),
+    ];
+  return { attachments: ft ? St.map((Wt) => ft(Wt)) : St, hookResults: mt };
+}
